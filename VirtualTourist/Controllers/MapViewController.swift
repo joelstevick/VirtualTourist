@@ -39,10 +39,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Handlers
     @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
-        if gestureRecognizer.state != UIGestureRecognizer.State.ended {
-            return
-        }
-        else if gestureRecognizer.state != UIGestureRecognizer.State.began {
+       if gestureRecognizer.state == UIGestureRecognizer.State.began {
             
             let touchPoint = gestureRecognizer.location(in: self.mapView)
             
