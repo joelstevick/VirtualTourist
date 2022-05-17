@@ -15,7 +15,6 @@
 		938E1FBB28338EF9007EAB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938E1FBA28338EF9007EAB79 /* Assets.xcassets */; };
 		938E1FBE28338EF9007EAB79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938E1FBC28338EF9007EAB79 /* LaunchScreen.storyboard */; };
 		93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B02ED028339B0600B10A0E /* MapViewController.swift */; };
-		93F6FB5C2833957B006C55D3 /* ListNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5B2833957B006C55D3 /* ListNavigationViewController.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		938E1FBD28338EF9007EAB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		938E1FBF28338EF9007EAB79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93B02ED028339B0600B10A0E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		93F6FB5B2833957B006C55D3 /* ListNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNavigationViewController.swift; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				938E1FB228338EF4007EAB79 /* ViewController.swift */,
-				93F6FB5B2833957B006C55D3 /* ListNavigationViewController.swift */,
 				93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */,
 				93B02ED028339B0600B10A0E /* MapViewController.swift */,
 			);
@@ -162,7 +159,6 @@
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
-				93F6FB5C2833957B006C55D3 /* ListNavigationViewController.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
 				93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */,
 			);
