@@ -52,7 +52,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
         
         if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "custom")
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "custom")
         } else {
             annotationView?.annotation = annotation
         }
