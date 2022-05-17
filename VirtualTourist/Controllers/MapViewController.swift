@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     // MARK: - Properties
@@ -39,16 +40,33 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Handlers
     @objc func handleLongPress(gestureRecognizer: UILongPressGestureRecognizer) {
-       if gestureRecognizer.state == UIGestureRecognizer.State.began {
+        if gestureRecognizer.state == UIGestureRecognizer.State.began {
             
             let touchPoint = gestureRecognizer.location(in: self.mapView)
             
             let touchMapCoordinate =  self.mapView.convert(touchPoint, toCoordinateFrom: mapView)
             let annotation = MKPointAnnotation()
             annotation.coordinate = touchMapCoordinate
-            annotation.title = "You long pressed here"
             
-            self.mapView.addAnnotation(annotation)
+            let geoCoder = CLGeocoder()
+            
+            geoCoder.reverseGeocodeLocation(CLLocation(latitude: touchMapCoordinate.latitude, longitude: touchMapCoordinate.longitude)) { (placemarks, error) in
+                guard
+                    let placemarks = placemarks,
+                    let placeMark = placemarks.first
+                else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    self.mapView.addAnnotation(annotation)
+                    annotation.title = placeMark.locality
+                    
+                    self.mapView.addAnnotation(annotation)
+                }
+                
+            }
         }
     }
 }
