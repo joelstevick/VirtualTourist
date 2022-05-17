@@ -45,7 +45,7 @@
         <!--Map-->
         <scene sceneID="Wb8-A0-cbf">
             <objects>
-                <viewController title="Map" id="0lU-TN-8ma" sceneMemberID="viewController">
+                <viewController title="Map" id="0lU-TN-8ma" customClass="MapViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RbV-lZ-guG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,6 +65,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.circle" catalog="system" id="ZGJ-nW-GEM"/>
                     <navigationItem key="navigationItem" id="5VS-2F-Hqc"/>
+                    <connections>
+                        <outlet property="mapView" destination="jej-4W-3uu" id="1eJ-PA-RWZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvV-kG-kMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
