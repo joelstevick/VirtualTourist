@@ -7,13 +7,16 @@
 
 import Foundation
 
-struct Media: Decodable {
-    let m: String
-}
-struct Entry: Decodable {
+struct Photo: Decodable {
+    let id: String
     let title: String
-    let media: Media
+    let secret: String
+    let server: String
+}
+
+struct Photos: Decodable {
+    let photo: [Photo]
 }
 struct SearchResponse: Decodable {
-    let items: [Entry]
+    let photos: Photos
 }
