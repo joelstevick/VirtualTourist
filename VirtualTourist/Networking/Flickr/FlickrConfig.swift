@@ -15,6 +15,6 @@ struct FlickrConfig {
     private static let service = "flickr.photos.search"
     
     static func makeSearchUrl(coordinate: CLLocationCoordinate2D) -> String {
-        return "\(endpoint)/\(service)?api_key=\(apiKey)&lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&nojsoncallback=1"
+        return "\(endpoint)/?api_key=\(apiKey)&method=\(service)&safe_search=1&lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&nojsoncallback=1&format=json"
     }
 }
