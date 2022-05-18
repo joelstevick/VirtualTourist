@@ -6,7 +6,15 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct FlickrConfig {
-    static let url = "https://api.flickr.com/services/feeds/photos_public.gne?tags=vegetables&tagmode=any&format=json&jsoncallback=?"
+    private static let apiKey = "4d149edffc818464bc15fe986ba85446"
+    private static let secret = "39c51aeceb0be12a"
+    private static let endpoint = "https://api.flickr.com/services"
+    private static let service = "flickr.photos.search"
+    
+    static func makeSearchUrl(coordinate: CLLocationCoordinate2D) -> String {
+        return "\(endpoint)/\(service)?\(apiKey)&lat=\(coordinate.latitude)&lon=\(coordinate.longitude)"
+    }
 }

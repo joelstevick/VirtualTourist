@@ -18,6 +18,7 @@
 		93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF42834E5D0002CD6EF /* DetailViewController.swift */; };
 		93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF82834EB15002CD6EF /* FlickrConfig.swift */; };
 		93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFA2834ECBD002CD6EF /* Search.swift */; };
+		93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFC2834F237002CD6EF /* SearchResponse.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		93D57EF42834E5D0002CD6EF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		93D57EF82834EB15002CD6EF /* FlickrConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrConfig.swift; sourceTree = "<group>"; };
 		93D57EFA2834ECBD002CD6EF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		93D57EFC2834F237002CD6EF /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			children = (
 				93D57EF82834EB15002CD6EF /* FlickrConfig.swift */,
 				93D57EFA2834ECBD002CD6EF /* Search.swift */,
+				93D57EFC2834F237002CD6EF /* SearchResponse.swift */,
 			);
 			path = Flickr;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
+				93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */,
 				93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */,
 				93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */,
 				93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */,

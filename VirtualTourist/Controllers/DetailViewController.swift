@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         Task {
-            await search()
+            await search(coordinate: coordinate)
         }
     }
     
