@@ -15,7 +15,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(coordinate)
+        Task {
+            await search()
+        }
     }
     
 
