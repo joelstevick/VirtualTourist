@@ -17,12 +17,18 @@ func search(coordinate: CLLocationCoordinate2D) async {
     do {
         let (data, _) =  try await session.data(for: request as URLRequest)
         let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-        print("Result from Flickr", result!)
         
         let decoder = JSONDecoder()
         
-        print(try decoder.decode(SearchResponse.self, from: data))
+        let response = try decoder.decode(SearchResponse.self, from: data)
         
+        var photoUrls = [String]()
+        
+        for photo in response.photos.photo {
+            photoUrls.append(FlickrConfig.makePhotoUrl(photo))
+        }
+        
+        print(photoUrls)
     } catch {
         print("Error Searching Flickr", error)
     }
