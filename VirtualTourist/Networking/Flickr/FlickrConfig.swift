@@ -18,7 +18,7 @@ struct FlickrConfig {
         return "\(endpoint)/?api_key=\(apiKey)&method=\(service)&safe_search=1&lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&nojsoncallback=1&format=json"
     }
     
-    static func makePhotoUrl(id: String, farmId: String, serverId: String) -> String {
-        return "https://farm\(farmId).api.flickr.com/\(serverId)/\(id)_\(secret).jpg"
+    static func makePhotoUrl(photo: Photo) -> String {
+        return "https://farm\(photo.farm).api.flickr.com/\(photo.server)/\(photo.id)_\(photo.secret).jpg"
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 struct Photo: Decodable {
     let id: String
     let title: String
+    let farm: String
     let secret: String
     let server: String
 }
