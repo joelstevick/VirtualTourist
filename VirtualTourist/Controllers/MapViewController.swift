@@ -43,8 +43,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     
     // MARK: - Handlers
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        print("Did select")
-        navigateToMapDetailView()
+        navigateToMapDetailView(view: view)
     }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard !(annotation is MKUserLocation) else {
@@ -101,9 +100,10 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     }
     
     // MARK: - Utility Methods
-    func navigateToMapDetailView() {
+    func navigateToMapDetailView(view: MKAnnotationView) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailViewController.coordinate = view.annotation?.coordinate
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

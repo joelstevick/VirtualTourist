@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import CoreLocation
 
 class DetailViewController: UIViewController {
+    // MARK: - Properties
+    var coordinate: CLLocationCoordinate2D!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print(coordinate)
     }
     
 
