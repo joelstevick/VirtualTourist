@@ -15,6 +15,7 @@
 		938E1FBB28338EF9007EAB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938E1FBA28338EF9007EAB79 /* Assets.xcassets */; };
 		938E1FBE28338EF9007EAB79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938E1FBC28338EF9007EAB79 /* LaunchScreen.storyboard */; };
 		93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B02ED028339B0600B10A0E /* MapViewController.swift */; };
+		93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF42834E5D0002CD6EF /* DetailViewController.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		938E1FBD28338EF9007EAB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		938E1FBF28338EF9007EAB79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93B02ED028339B0600B10A0E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		93D57EF42834E5D0002CD6EF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,13 +67,21 @@
 				938E1FAE28338EF4007EAB79 /* AppDelegate.swift */,
 				938E1FB028338EF4007EAB79 /* SceneDelegate.swift */,
 				93F6FB5A28339548006C55D3 /* Controllers */,
-				938E1FB428338EF4007EAB79 /* Main.storyboard */,
+				93D57EF32834E577002CD6EF /* Views */,
 				938E1FBA28338EF9007EAB79 /* Assets.xcassets */,
-				938E1FBC28338EF9007EAB79 /* LaunchScreen.storyboard */,
 				938E1FBF28338EF9007EAB79 /* Info.plist */,
 				938E1FB728338EF4007EAB79 /* VirtualTourist.xcdatamodeld */,
 			);
 			path = VirtualTourist;
+			sourceTree = "<group>";
+		};
+		93D57EF32834E577002CD6EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				938E1FBC28338EF9007EAB79 /* LaunchScreen.storyboard */,
+				938E1FB428338EF4007EAB79 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		93F6FB5A28339548006C55D3 /* Controllers */ = {
@@ -80,6 +90,7 @@
 				938E1FB228338EF4007EAB79 /* ViewController.swift */,
 				93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */,
 				93B02ED028339B0600B10A0E /* MapViewController.swift */,
+				93D57EF42834E5D0002CD6EF /* DetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
 				93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */,
+				93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +319,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VirtualTourist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -334,6 +347,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VirtualTourist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

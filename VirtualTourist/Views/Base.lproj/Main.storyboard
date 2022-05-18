@@ -51,11 +51,28 @@
                     <navigationItem key="navigationItem" id="5VS-2F-Hqc"/>
                     <connections>
                         <outlet property="mapView" destination="jej-4W-3uu" id="1eJ-PA-RWZ"/>
+                        <segue destination="Vvr-io-2na" kind="show" identifier="Detail" id="DsV-pb-Fcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvV-kG-kMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1417" y="-570"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="k0B-kq-B8W">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="Vvr-io-2na" customClass="DetailViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0cl-bO-h5j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="m6b-Eb-6vz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pGm-L8-iKr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cwt-dO-U4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2396" y="-558"/>
         </scene>
     </scenes>
     <resources>
