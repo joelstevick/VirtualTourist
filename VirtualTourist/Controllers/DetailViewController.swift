@@ -47,8 +47,6 @@ class DetailViewController: UIViewController {
                             // perform the segue
                             self.activityIndicator.stopAnimating()
                             
-                           
-                            
                             strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
                         }
                         
