@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="2147.826086956522" y="-571.20535714285711"/>
         </scene>
-        <!--Add Pictures-->
+        <!--Select Pictures-->
         <scene sceneID="DFd-es-l6g">
             <objects>
                 <viewController id="FMe-KA-YNq" customClass="ImagePickerViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
@@ -106,7 +106,7 @@
                         <viewLayoutGuide key="safeArea" id="a4i-i2-ZFV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Pictures" id="XfA-kZ-ytY"/>
+                    <navigationItem key="navigationItem" title="Select Pictures" id="XfA-kZ-ytY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3o-jQ-hyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
