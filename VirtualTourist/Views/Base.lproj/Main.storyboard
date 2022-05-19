@@ -48,7 +48,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.circle" catalog="system" id="ZGJ-nW-GEM"/>
-                    <navigationItem key="navigationItem" id="5VS-2F-Hqc"/>
+                    <navigationItem key="navigationItem" id="5VS-2F-Hqc">
+                        <barButtonItem key="backBarButtonItem" title="Map" id="KCO-Y9-ssn"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="jej-4W-3uu" id="1eJ-PA-RWZ"/>
                         <segue destination="Vvr-io-2na" kind="show" identifier="Detail" id="DsV-pb-Fcc"/>
@@ -58,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="1152" y="-571"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Tour-->
         <scene sceneID="k0B-kq-B8W">
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="Vvr-io-2na" customClass="DetailViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +70,8 @@
                         <viewLayoutGuide key="safeArea" id="m6b-Eb-6vz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pGm-L8-iKr">
+                    <navigationItem key="navigationItem" title="Tour" id="pGm-L8-iKr">
+                        <barButtonItem key="backBarButtonItem" title="Tour" id="Nau-vJ-GlA"/>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="alT-6p-BVv">
                             <connections>
                                 <segue destination="FMe-KA-YNq" kind="show" id="wcJ-Fy-as2"/>
@@ -80,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="2149" y="-571"/>
         </scene>
-        <!--Image Picker View Controller-->
+        <!--Add Pictures-->
         <scene sceneID="DFd-es-l6g">
             <objects>
                 <viewController id="FMe-KA-YNq" customClass="ImagePickerViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +93,7 @@
                         <viewLayoutGuide key="safeArea" id="a4i-i2-ZFV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XfA-kZ-ytY"/>
+                    <navigationItem key="navigationItem" title="Add Pictures" id="XfA-kZ-ytY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3o-jQ-hyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
