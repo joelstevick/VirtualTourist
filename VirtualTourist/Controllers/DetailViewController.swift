@@ -31,10 +31,13 @@ class DetailViewController: UIViewController {
             
             for photoUrl in photoUrls {
                 queue.async {
-                    let data = try? Data(contentsOf: URL(string: photoUrl)!)
+                    guard let data = try? Data(contentsOf: URL(string: photoUrl)!) else {
+                        print("Could not get data for url:", photoUrl)
+                        return
+                    }
                     
                     DispatchQueue.main.async {
-                        self.photoImages.append(UIImage(data: data!)!)
+                        self.photoImages.append(UIImage(data: data)!)
                         
                         // If all images loaded, perform the segue
                         if self.photoImages.count == photoUrl.count {
