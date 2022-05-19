@@ -67,21 +67,34 @@
                     <view key="view" contentMode="scaleToFill" id="0cl-bO-h5j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="C9c-Bw-A1d">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="m6b-Eb-6vz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C9c-Bw-A1d" firstAttribute="centerX" secondItem="0cl-bO-h5j" secondAttribute="centerX" id="RTT-Lo-acZ"/>
+                            <constraint firstItem="C9c-Bw-A1d" firstAttribute="centerY" secondItem="0cl-bO-h5j" secondAttribute="centerY" id="Vhs-pN-KOJ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="pGm-L8-iKr">
                         <barButtonItem key="backBarButtonItem" title="Tour" id="Nau-vJ-GlA"/>
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="alT-6p-BVv">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="alT-6p-BVv" userLabel="+">
                             <connections>
-                                <segue destination="FMe-KA-YNq" kind="show" id="wcJ-Fy-as2"/>
+                                <action selector="addPressed:" destination="Vvr-io-2na" id="9NE-ei-tAs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="C9c-Bw-A1d" id="EnD-4J-Hh8"/>
+                        <segue destination="FMe-KA-YNq" kind="show" identifier="AddPicture" id="4ki-Q5-Luj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwt-dO-U4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149" y="-571"/>
+            <point key="canvasLocation" x="2147.826086956522" y="-571.20535714285711"/>
         </scene>
         <!--Add Pictures-->
         <scene sceneID="DFd-es-l6g">

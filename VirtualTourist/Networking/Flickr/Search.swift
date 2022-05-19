@@ -8,8 +8,9 @@
 import Foundation
 import CoreLocation
 
-func search(coordinate: CLLocationCoordinate2D) async {
+func search(coordinate: CLLocationCoordinate2D) async -> [String] {
     let session = URLSession.shared
+    var photoUrls = [String]()
     
     var request = URLRequest(url: URL(string: FlickrConfig.makeSearchUrl(coordinate: coordinate))!)
     request.httpMethod = "GET"
@@ -22,15 +23,15 @@ func search(coordinate: CLLocationCoordinate2D) async {
         
         let response = try decoder.decode(SearchResponse.self, from: data)
         
-        var photoUrls = [String]()
-        
         for photo in response.photos.photo {
             photoUrls.append(FlickrConfig.makePhotoUrl(photo))
         }
         
-        print(photoUrls)
+        return photoUrls
     } catch {
         print("Error Searching Flickr", error)
+        
+        return photoUrls
     }
     
 }

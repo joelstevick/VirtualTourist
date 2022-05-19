@@ -9,10 +9,12 @@ import UIKit
 
 class ImagePickerViewController: UIViewController {
 
+    // MARK: - Properties
+    var photoURLs: [String]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
