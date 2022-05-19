@@ -30,28 +30,31 @@ class DetailViewController: UIViewController {
             let strongSelf = self
             
             for photoUrl in photoUrls {
+                // execute in parallel threads
                 queue.async {
                     
-                    DispatchQueue.main.async {
-                        Task {
-                            // download the image
-                            let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!, viewController: self)
-                            
-                            // add to the list
-                            if let photoImage = photoImage {
-                                self.photoImages.append(photoImage)
+                    Task {
+                        // download the image
+                        let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!, viewController: self)
+                        
+                        // need to serialize on the main thread
+                        DispatchQueue.main.async {
+                            Task {
                                 
-                                // If all images loaded, perform the segue
-                                if self.photoImages.count == photoUrls.count {
-                                    DispatchQueue.main.async {
+                                // add to the list
+                                if let photoImage = photoImage {
+                                    self.photoImages.append(photoImage)
+                                    
+                                    // If all images loaded, perform the segue
+                                    if self.photoImages.count == photoUrls.count {
                                         // perform the segue
                                         self.activityIndicator.stopAnimating()
                                         
                                         strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
                                     }
                                 }
+                                
                             }
-                            
                         }
                     }
                 }
