@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93656E042836351C0003B17A /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* ImagePickerViewController.swift */; };
 		938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FAE28338EF4007EAB79 /* AppDelegate.swift */; };
 		938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FB028338EF4007EAB79 /* SceneDelegate.swift */; };
 		938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FB228338EF4007EAB79 /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93656E032836351C0003B17A /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		938E1FAB28338EF4007EAB79 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938E1FAE28338EF4007EAB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		938E1FB028338EF4007EAB79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */,
 				93B02ED028339B0600B10A0E /* MapViewController.swift */,
 				93D57EF42834E5D0002CD6EF /* DetailViewController.swift */,
+				93656E032836351C0003B17A /* ImagePickerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
+				93656E042836351C0003B17A /* ImagePickerViewController.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
 				93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */,
 				93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */,

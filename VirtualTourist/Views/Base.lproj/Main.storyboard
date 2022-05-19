@@ -56,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jvV-kG-kMJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1417" y="-570"/>
+            <point key="canvasLocation" x="1152" y="-571"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="k0B-kq-B8W">
@@ -68,15 +68,38 @@
                         <viewLayoutGuide key="safeArea" id="m6b-Eb-6vz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pGm-L8-iKr"/>
+                    <navigationItem key="navigationItem" id="pGm-L8-iKr">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="alT-6p-BVv">
+                            <connections>
+                                <segue destination="FMe-KA-YNq" kind="show" id="wcJ-Fy-as2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwt-dO-U4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2396" y="-558"/>
+            <point key="canvasLocation" x="2149" y="-571"/>
+        </scene>
+        <!--Image Picker View Controller-->
+        <scene sceneID="DFd-es-l6g">
+            <objects>
+                <viewController id="FMe-KA-YNq" customClass="ImagePickerViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QT7-UU-NZg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="a4i-i2-ZFV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XfA-kZ-ytY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z3o-jQ-hyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3055" y="-571"/>
         </scene>
     </scenes>
     <resources>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
