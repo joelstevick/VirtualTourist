@@ -43,10 +43,12 @@ class DetailViewController: UIViewController {
                                 
                                 // If all images loaded, perform the segue
                                 if self.photoImages.count == photoUrls.count {
-                                    // perform the segue
-                                    self.activityIndicator.stopAnimating()
-                                    
-                                    strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
+                                    DispatchQueue.main.async {
+                                        // perform the segue
+                                        self.activityIndicator.stopAnimating()
+                                        
+                                        strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
+                                    }
                                 }
                             }
                             
@@ -70,5 +72,5 @@ class DetailViewController: UIViewController {
     }
     
     // MARK: - Utility functions
-
+    
 }
