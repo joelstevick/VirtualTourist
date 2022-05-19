@@ -25,6 +25,7 @@ func search(coordinate: CLLocationCoordinate2D, viewController: UIViewController
         let response = try decoder.decode(SearchResponse.self, from: data)
         
         for photo in response.photos.photo {
+            
             photoUrls.append(FlickrConfig.makePhotoUrl(photo))
         }
         

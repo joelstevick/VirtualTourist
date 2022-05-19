@@ -35,14 +35,14 @@ class DetailViewController: UIViewController {
                     DispatchQueue.main.async {
                         Task {
                             // download the image
-                            let photoImage = await self.fetchImage(URL(string: photoUrl)!)
+                            let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!, viewController: self)
                             
                             // add to the list
                             if let photoImage = photoImage {
                                 self.photoImages.append(photoImage)
                                 
                                 // If all images loaded, perform the segue
-                                if self.photoImages.count == photoUrl.count {
+                                if self.photoImages.count == photoUrls.count {
                                     // perform the segue
                                     self.activityIndicator.stopAnimating()
                                     
@@ -70,18 +70,5 @@ class DetailViewController: UIViewController {
     }
     
     // MARK: - Utility functions
-    private func fetchImage(_ photoUrl: URL) async -> UIImage? {
-        // get data
-        do {
-            let (data, _) = try await URLSession.shared.data(from: photoUrl)
-            
-            // convert the data to image
-            return UIImage(data: data)!
-        } catch {
-            print("Error fetching url", error.localizedDescription, photoUrl)
-            showError(viewController: self, message: "Error fetching URL: \(error.localizedDescription)")
-            return nil
-        }
-        
-    }
+
 }
