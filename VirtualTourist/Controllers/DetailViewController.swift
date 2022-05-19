@@ -31,12 +31,15 @@ class DetailViewController: UIViewController {
             
             for photoUrl in photoUrls {
                 queue.async {
-                    guard let data = try? Data(contentsOf: URL(string: photoUrl)!) else {
-                        print("Could not get data for url:", photoUrl)
-                        return
-                    }
-                    
+                   
                     DispatchQueue.main.async {
+                        // download the image
+                        guard let data = try? Data(contentsOf: URL(string: photoUrl)!) else {
+                            print("Could not get data for url:", photoUrl)
+                            return
+                        }
+                        
+                        // add to the list
                         self.photoImages.append(UIImage(data: data)!)
                         
                         // If all images loaded, perform the segue
