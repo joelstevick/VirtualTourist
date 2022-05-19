@@ -14,18 +14,41 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var photoUrls: [String]?
+    var photoImages = [UIImage]()
     
     // MARK: - Actions
     @IBAction func addPressed(_ sender: Any) {
         Task {
             self.activityIndicator.startAnimating()
             
-            photoUrls = await search(coordinate: coordinate)
+            // get the photo URLs
+            let photoUrls = await search(coordinate: coordinate)
             
-            self.activityIndicator.stopAnimating()
+            // download the images in parallel
+            let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
             
-            performSegue(withIdentifier: "AddPicture", sender: self)
+            let strongSelf = self
+            
+            for photoUrl in photoUrls {
+                queue.async {
+                    let data = try? Data(contentsOf: URL(string: photoUrl)!)
+                    
+                    DispatchQueue.main.async {
+                        self.photoImages.append(UIImage(data: data!)!)
+                        
+                        // If all images loaded, perform the segue
+                        if self.photoImages.count == photoUrl.count {
+                            // perform the segue
+                            self.activityIndicator.stopAnimating()
+                            
+                           
+                            
+                            strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
+                        }
+                        
+                    }
+                }
+            }
             
         }
     }
@@ -37,7 +60,7 @@ class DetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // If this is an ImagePickerViewConroller, we'll configure its `photoUrls`
         if let vc = segue.destination as? ImagePickerViewController {
-            vc.photoURLs = photoUrls!
+            vc.photoImages = photoImages
         }
     }
     
