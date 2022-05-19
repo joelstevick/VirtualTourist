@@ -7,8 +7,9 @@
 
 import Foundation
 import CoreLocation
+import UIKit
 
-func search(coordinate: CLLocationCoordinate2D) async -> [String] {
+func search(coordinate: CLLocationCoordinate2D, viewController: UIViewController) async -> [String] {
     let session = URLSession.shared
     var photoUrls = [String]()
     
@@ -17,7 +18,7 @@ func search(coordinate: CLLocationCoordinate2D) async -> [String] {
     
     do {
         let (data, _) =  try await session.data(for: request as URLRequest)
-        let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+//        let result = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
         
         let decoder = JSONDecoder()
         
@@ -30,7 +31,7 @@ func search(coordinate: CLLocationCoordinate2D) async -> [String] {
         return photoUrls
     } catch {
         print("Error Searching Flickr", error)
-        
+        showError(viewController: viewController, message: "Error Searching Flickr \(error)")
         return photoUrls
     }
     

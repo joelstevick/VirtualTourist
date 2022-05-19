@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
             self.activityIndicator.startAnimating()
             
             // get the photo URLs
-            let photoUrls = await search(coordinate: coordinate)
+            let photoUrls = await search(coordinate: coordinate, viewController: self)
             
             // download the images in parallel
             let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
@@ -31,25 +31,26 @@ class DetailViewController: UIViewController {
             
             for photoUrl in photoUrls {
                 queue.async {
-                   
+                    
                     DispatchQueue.main.async {
-                        // download the image
-                        guard let data = try? Data(contentsOf: URL(string: photoUrl)!) else {
-                            print("Could not get data for url:", photoUrl)
-                            return
-                        }
-                        
-                        // add to the list
-                        self.photoImages.append(UIImage(data: data)!)
-                        
-                        // If all images loaded, perform the segue
-                        if self.photoImages.count == photoUrl.count {
-                            // perform the segue
-                            self.activityIndicator.stopAnimating()
+                        Task {
+                            // download the image
+                            let photoImage = await self.fetchImage(URL(string: photoUrl)!)
                             
-                            strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
+                            // add to the list
+                            if let photoImage = photoImage {
+                                self.photoImages.append(photoImage)
+                                
+                                // If all images loaded, perform the segue
+                                if self.photoImages.count == photoUrl.count {
+                                    // perform the segue
+                                    self.activityIndicator.stopAnimating()
+                                    
+                                    strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
+                                }
+                            }
+                            
                         }
-                        
                     }
                 }
             }
@@ -68,4 +69,19 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // MARK: - Utility functions
+    private func fetchImage(_ photoUrl: URL) async -> UIImage? {
+        // get data
+        do {
+            let (data, _) = try await URLSession.shared.data(from: photoUrl)
+            
+            // convert the data to image
+            return UIImage(data: data)!
+        } catch {
+            print("Error fetching url", error.localizedDescription, photoUrl)
+            showError(viewController: self, message: "Error fetching URL: \(error.localizedDescription)")
+            return nil
+        }
+        
+    }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93656E042836351C0003B17A /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* ImagePickerViewController.swift */; };
+		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FAE28338EF4007EAB79 /* AppDelegate.swift */; };
 		938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FB028338EF4007EAB79 /* SceneDelegate.swift */; };
 		938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FB228338EF4007EAB79 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		93656E032836351C0003B17A /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		93656E06283654400003B17A /* ShowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 		938E1FAB28338EF4007EAB79 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938E1FAE28338EF4007EAB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		938E1FB028338EF4007EAB79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93656E05283654300003B17A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				93656E06283654400003B17A /* ShowError.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		938E1FA228338EF4007EAB79 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 		938E1FAD28338EF4007EAB79 /* VirtualTourist */ = {
 			isa = PBXGroup;
 			children = (
+				93656E05283654300003B17A /* Util */,
 				93D57EF62834EAD1002CD6EF /* Networking */,
 				938E1FAE28338EF4007EAB79 /* AppDelegate.swift */,
 				938E1FB028338EF4007EAB79 /* SceneDelegate.swift */,
@@ -195,6 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */,
+				93656E07283654400003B17A /* ShowError.swift in Sources */,
 				938E1FB928338EF4007EAB79 /* VirtualTourist.xcdatamodeld in Sources */,
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
