@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImagePickerViewController: UIViewController {
+class ImageSwiperController: UIViewController {
 
     // MARK: - Properties
     var photoImages: [UIImage]!
