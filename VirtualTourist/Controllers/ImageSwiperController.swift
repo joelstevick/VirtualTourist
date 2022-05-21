@@ -18,6 +18,7 @@ class ImageSwiperController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        image1View.image = photoImages[0]
         print(photoImages)
 
     }
