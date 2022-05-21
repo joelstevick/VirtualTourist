@@ -31,7 +31,7 @@ extension MapViewController {
         // get the current locations
         let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
         
-        // sort reverse chrono (not really needed here, yet)
+        // sort reverse chrono
         fetchRequest.sortDescriptors = [
             NSSortDescriptor(key: "creationDate", ascending: false)
         ]
