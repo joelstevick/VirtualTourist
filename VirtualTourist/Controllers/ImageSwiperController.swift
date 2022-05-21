@@ -10,6 +10,9 @@ import UIKit
 class ImageSwiperController: UIViewController {
 
     // MARK: - Properties
+    @IBOutlet weak var image1View: UIImageView!
+    
+    @IBOutlet weak var image2View: UIImageView!
     var photoImages: [UIImage]!
     
     override func viewDidLoad() {
