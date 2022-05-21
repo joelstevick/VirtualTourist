@@ -12,10 +12,10 @@ class TableViewController: UITableViewController {
     // MARK: - Properties
     var locations: [Location]!
     
+    var dataController: DataController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print(locations)
     }
 
     // MARK: - Table view data source
@@ -30,7 +30,24 @@ class TableViewController: UITableViewController {
         return locations.count
     }
 
-  
+
+    // swipe requirements
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { action, indexPath in
+            self.locations.remove(at: indexPath.row)
+            
+            tableView.reloadData()
+            
+        }
+        
+        return [deleteAction]
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 

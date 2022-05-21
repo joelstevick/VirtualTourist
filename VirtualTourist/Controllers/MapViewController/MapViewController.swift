@@ -46,6 +46,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         
         let vc = segue.destination as! TableViewController
         vc.locations = locations
+        vc.dataController = dataController
     }
     
     
