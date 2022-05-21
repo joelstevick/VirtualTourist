@@ -40,9 +40,7 @@ extension MapViewController {
                         annotation.title = placeMark.locality
                         annotation.subtitle = placeMark.administrativeArea
                         
-                        self?.annotations.append(annotation)
-                        
-                        self?.load()
+                        self?.addAnnotation(annotation: annotation)
                     }
                     
                 }

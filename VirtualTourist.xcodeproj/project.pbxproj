@@ -12,6 +12,7 @@
 		9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301B28390F000017AF7F /* MapViewController+MapViewDelegate.swift */; };
 		9332301E28390F980017AF7F /* MapViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301D28390F980017AF7F /* MapViewController+Utilities.swift */; };
 		93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301F283915860017AF7F /* MapViewController+ViewModel.swift */; };
+		93323026283925BC0017AF7F /* NanoID in Frameworks */ = {isa = PBXBuildFile; productRef = 93323025283925BC0017AF7F /* NanoID */; };
 		93656E042836351C0003B17A /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* ImagePickerViewController.swift */; };
 		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0828365C1F0003B17A /* GetInfoRespone.swift */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93323026283925BC0017AF7F /* NanoID in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +189,9 @@
 			dependencies = (
 			);
 			name = VirtualTourist;
+			packageProductDependencies = (
+				93323025283925BC0017AF7F /* NanoID */,
+			);
 			productName = VirtualTourist;
 			productReference = 938E1FAB28338EF4007EAB79 /* VirtualTourist.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 938E1FA228338EF4007EAB79;
+			packageReferences = (
+				93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */,
+			);
 			productRefGroup = 938E1FAC28338EF4007EAB79 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -478,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ellliott/NanoID.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93323025283925BC0017AF7F /* NanoID */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */;
+			productName = NanoID;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		938E1FB728338EF4007EAB79 /* VirtualTourist.xcdatamodeld */ = {

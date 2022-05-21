@@ -7,11 +7,21 @@
 
 import Foundation
 import MapKit
+import NanoID
+import CoreLocation
 
 extension MapViewController {
     func load() {
         for annotation in annotations {
             self.mapView.addAnnotation(annotation)
         }
+    }
+    
+    func addAnnotation(
+        annotation: MKPointAnnotation
+    ) {
+        annotations.append(annotation)
+        
+        load()
     }
 }
