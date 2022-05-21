@@ -64,6 +64,7 @@
 		933230152839093E0017AF7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				938E1FB728338EF4007EAB79 /* VirtualTourist.xcdatamodeld */,
 				93323016283909520017AF7F /* DataController.swift */,
 			);
 			path = Model;
@@ -105,7 +106,6 @@
 				93D57EF32834E577002CD6EF /* Views */,
 				938E1FBA28338EF9007EAB79 /* Assets.xcassets */,
 				938E1FBF28338EF9007EAB79 /* Info.plist */,
-				938E1FB728338EF4007EAB79 /* VirtualTourist.xcdatamodeld */,
 			);
 			path = VirtualTourist;
 			sourceTree = "<group>";
