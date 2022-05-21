@@ -29,6 +29,9 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         lpgr.delegate = self
         
         self.mapView.addGestureRecognizer(lpgr)
+        
+        // initialize the view model
+        load()
     }
     
     
