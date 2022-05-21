@@ -63,8 +63,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
-        print(indexPath.row)
+      
         let location = locations[indexPath.row]
         cell.textLabel?.text = "\(location.title!), \(location.subtitle!)"
         
