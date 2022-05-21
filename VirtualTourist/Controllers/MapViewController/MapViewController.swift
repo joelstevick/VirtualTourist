@@ -16,6 +16,8 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     
     @IBOutlet weak var mapView: MKMapView!
     
+    var saveObserverToken: Any?
+    
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +39,14 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         
         // initialize the view model
         load()
+        
+        // listen for model changes
+        addSaveNotificationObserver()
     }
     
+    deinit {
+        removeSaveNotificationObserver()
+    }
     
     // MARK: - Navigation
     

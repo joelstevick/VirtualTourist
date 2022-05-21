@@ -78,9 +78,6 @@ extension MapViewController {
         } catch {
             showError(viewController: self, message: error.localizedDescription)
         }
-        
-        // reload
-        load()
     }
     
     
