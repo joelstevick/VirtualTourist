@@ -12,6 +12,8 @@ import CoreLocation
 class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
     // MARK: - Properties
     var locations = [Location]()
+    var savedAnnotations: [MKPointAnnotation]?
+    
     let dataController = DataController(modelName: "VirtualTourist")
     
     @IBOutlet weak var mapView: MKMapView!
@@ -55,6 +57,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
         let vc = segue.destination as! TableViewController
         vc.locations = locations
         vc.dataController = dataController
+        
     }
     
     

@@ -1,5 +1,5 @@
 //
-//  MapViewController+CoreData+Notificaitons.swift
+//  MapViewController+CoreData+Notifications.swift
 //  VirtualTourist
 //
 //  Created by Joel Stevick on 5/21/22.
@@ -29,6 +29,11 @@ extension MapViewController {
     }
     func handleSaveNotication(notification: Notification) {
         DispatchQueue.main.async { [weak self] in
+            // clear the map
+            if let savedAnnotations = self?.savedAnnotations {
+                self?.mapView.removeAnnotations(savedAnnotations)
+            }
+            // reload the map
             self?.load()
         }
     }

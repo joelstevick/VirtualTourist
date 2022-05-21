@@ -25,6 +25,9 @@ extension MapViewController {
             
             self.mapView.addAnnotation(annotation)
             
+            // save the locations in case there is a change in the TableViewController -- we need to be able to remove the pins
+            // associated with the locations that were deleted
+            savedAnnotations = (self.mapView.annotations as! [MKPointAnnotation])
         }
     
     func load() {
