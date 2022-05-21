@@ -9,6 +9,7 @@ import Foundation
 import MapKit
 import NanoID
 import CoreLocation
+import CoreData
 
 extension MapViewController {
     private func addAnnotationToMapView(
@@ -22,15 +23,32 @@ extension MapViewController {
             annotation.title = title
             annotation.subtitle = subTitle
             
-            annotations.append(annotation)
-            
-            load()
-        }
-    func load() {
-        
-        for annotation in annotations {
             self.mapView.addAnnotation(annotation)
+            
         }
+    
+    func load() {
+        // get the current locations
+        let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
+        
+        // sort reverse chrono (not really needed here, yet)
+        fetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "creationDate", ascending: false)
+        ]
+        
+        guard let locations =  try? dataController.viewContext.fetch(fetchRequest) else {
+            showError(viewController: self, message: "Could not read your phone data")
+            return
+        }
+        for location in locations {
+            // display in the map view
+            addAnnotationToMapView(
+                title: location.title!,
+                subTitle: location.subtitle!,
+                latitude: location.latitude,
+                longitude: location.longitude)
+        }
+        
     }
     
     func addAnnotation(
@@ -39,8 +57,6 @@ extension MapViewController {
         latitude: Double,
         longitude: Double
     ) {
-        // display in the map view
-        addAnnotationToMapView(title: title, subTitle: subTitle, latitude: latitude, longitude: longitude)
         
         // persist
         let location = Location(context: dataController.viewContext)
@@ -49,13 +65,17 @@ extension MapViewController {
         location.latitude = latitude
         location.longitude = longitude
         location.title = title
-        location.subTitle = subTitle
+        location.subtitle = subTitle
+        location.creationDate = Date.now // we may need this?
         
         do {
             try dataController.viewContext.save()
         } catch {
             showError(viewController: self, message: error.localizedDescription)
         }
+        
+        // reload
+        load()
     }
     
     
