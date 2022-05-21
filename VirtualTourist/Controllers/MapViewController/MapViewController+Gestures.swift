@@ -34,15 +34,15 @@ extension MapViewController {
                         return
                     }
                     
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [weak self]  in
                         
                         // add the pin to the view model
                         annotation.title = placeMark.locality
                         annotation.subtitle = placeMark.administrativeArea
                         
-                        self.annotations.append(annotation)
+                        self?.annotations.append(annotation)
                         
-                        self.load()
+                        self?.load()
                     }
                     
                 }
