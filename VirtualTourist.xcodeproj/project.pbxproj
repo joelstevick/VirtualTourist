@@ -11,6 +11,7 @@
 		9332301A28390E370017AF7F /* MapViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301928390E370017AF7F /* MapViewController+Gestures.swift */; };
 		9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301B28390F000017AF7F /* MapViewController+MapViewDelegate.swift */; };
 		9332301E28390F980017AF7F /* MapViewController+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301D28390F980017AF7F /* MapViewController+Utilities.swift */; };
+		93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332301F283915860017AF7F /* MapViewController+ViewModel.swift */; };
 		93656E042836351C0003B17A /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* ImagePickerViewController.swift */; };
 		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0828365C1F0003B17A /* GetInfoRespone.swift */; };
@@ -35,6 +36,7 @@
 		9332301928390E370017AF7F /* MapViewController+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Gestures.swift"; sourceTree = "<group>"; };
 		9332301B28390F000017AF7F /* MapViewController+MapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+MapViewDelegate.swift"; sourceTree = "<group>"; };
 		9332301D28390F980017AF7F /* MapViewController+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Utilities.swift"; sourceTree = "<group>"; };
+		9332301F283915860017AF7F /* MapViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		93656E032836351C0003B17A /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		93656E06283654400003B17A /* ShowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 		93656E0828365C1F0003B17A /* GetInfoRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoRespone.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				9332301928390E370017AF7F /* MapViewController+Gestures.swift */,
 				9332301B28390F000017AF7F /* MapViewController+MapViewDelegate.swift */,
 				9332301D28390F980017AF7F /* MapViewController+Utilities.swift */,
+				9332301F283915860017AF7F /* MapViewController+ViewModel.swift */,
 			);
 			path = MapViewController;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				93656E0B28365E4D0003B17A /* FetchImage.swift in Sources */,
 				93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */,
 				93656E07283654400003B17A /* ShowError.swift in Sources */,
+				93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */,
 				938E1FB928338EF4007EAB79 /* VirtualTourist.xcdatamodeld in Sources */,
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
 				9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */,

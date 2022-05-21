@@ -11,6 +11,7 @@ import CoreLocation
 
 class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
     // MARK: - Properties
+    var annotations = [MKPointAnnotation]()
     
     @IBOutlet weak var mapView: MKMapView!
     
