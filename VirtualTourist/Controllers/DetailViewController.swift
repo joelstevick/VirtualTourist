@@ -26,9 +26,7 @@ class DetailViewController: UIViewController {
             
             // download the images in parallel
             let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
-            
-            let strongSelf = self
-            
+         
             for photoUrl in photoUrls {
                 // execute in parallel threads
                 queue.async {
@@ -50,7 +48,7 @@ class DetailViewController: UIViewController {
                                         // perform the segue
                                         self.activityIndicator.stopAnimating()
                                         
-                                        strongSelf.performSegue(withIdentifier: "AddPicture", sender: strongSelf)
+                                        self.performSegue(withIdentifier: "AddPicture", sender: self)
                                     }
                                 }
                                 
