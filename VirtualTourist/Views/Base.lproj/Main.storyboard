@@ -50,6 +50,11 @@
                     <tabBarItem key="tabBarItem" title="Map" image="mappin.circle" catalog="system" id="ZGJ-nW-GEM"/>
                     <navigationItem key="navigationItem" id="5VS-2F-Hqc">
                         <barButtonItem key="backBarButtonItem" title="Map" id="KCO-Y9-ssn"/>
+                        <barButtonItem key="rightBarButtonItem" image="pencil" catalog="system" id="osi-Xu-4yq">
+                            <connections>
+                                <segue destination="Ygm-Qw-Ygq" kind="show" id="DQa-pU-DXq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="jej-4W-3uu" id="1eJ-PA-RWZ"/>
@@ -94,7 +99,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwt-dO-U4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2147.826086956522" y="-571.20535714285711"/>
+            <point key="canvasLocation" x="2177" y="-740"/>
         </scene>
         <!--Select Pictures-->
         <scene sceneID="DFd-es-l6g">
@@ -112,9 +117,39 @@
             </objects>
             <point key="canvasLocation" x="3055" y="-571"/>
         </scene>
+        <!--Edit-->
+        <scene sceneID="g3Z-Vb-SSk">
+            <objects>
+                <tableViewController id="Ygm-Qw-Ygq" customClass="TableViewController" customModule="VirtualTourist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1Hu-2g-mf3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pfb-k9-gnF">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pfb-k9-gnF" id="J3P-S1-Szu">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ygm-Qw-Ygq" id="kwA-WR-NTS"/>
+                            <outlet property="delegate" destination="Ygm-Qw-Ygq" id="joF-ov-NY9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit" id="bdm-Fv-gCt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zUG-Ao-V4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1826" y="64"/>
+        </scene>
     </scenes>
     <resources>
         <image name="mappin.circle" catalog="system" width="128" height="121"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
