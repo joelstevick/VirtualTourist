@@ -42,25 +42,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
      */
     
     // MARK: - Handlers
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        navigateToMapDetailView(view: view)
-    }
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else {
-            return nil // ignore current user location
-        }
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "custom")
-        
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "custom")
-        } else {
-            annotationView?.annotation = annotation
-        }
-        
-        annotationView?.canShowCallout = true
-        
-        return annotationView
-    }
+    
         
     // MARK: - Utility Methods
     func navigateToMapDetailView(view: MKAnnotationView) {
