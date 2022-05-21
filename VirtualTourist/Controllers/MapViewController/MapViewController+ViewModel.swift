@@ -18,8 +18,17 @@ extension MapViewController {
     }
     
     func addAnnotation(
-        annotation: MKPointAnnotation
+        title: String,
+        subTitle: String,
+        latitude: Double,
+        longitude: Double
     ) {
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        annotation.title = title
+        annotation.subtitle = subTitle
+        
         annotations.append(annotation)
         
         load()

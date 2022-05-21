@@ -20,9 +20,7 @@ extension MapViewController {
                 let touchPoint = gestureRecognizer.location(in: self.mapView)
                 
                 let touchMapCoordinate =  self.mapView.convert(touchPoint, toCoordinateFrom: self.mapView)
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = touchMapCoordinate
-                
+               
                 let geoCoder = CLGeocoder()
                 
                 // get the placemark that describes the location in human-terms
@@ -37,10 +35,12 @@ extension MapViewController {
                     DispatchQueue.main.async { [weak self]  in
                         
                         // add the pin to the view model
-                        annotation.title = placeMark.locality
-                        annotation.subtitle = placeMark.administrativeArea
-                        
-                        self?.addAnnotation(annotation: annotation)
+                        self?.addAnnotation(
+                            title: placeMark.locality ?? "unnamed locality",
+                            subTitle: placeMark.administrativeArea ?? "unnamed administrative area",
+                            latitude: touchMapCoordinate.latitude,
+                            longitude: touchMapCoordinate.longitude
+                        )
                     }
                     
                 }
