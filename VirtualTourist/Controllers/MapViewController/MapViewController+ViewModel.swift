@@ -39,7 +39,24 @@ extension MapViewController {
         latitude: Double,
         longitude: Double
     ) {
+        // display in the map view
         addAnnotationToMapView(title: title, subTitle: subTitle, latitude: latitude, longitude: longitude)
+        
+        // persist
+        let location = Location(context: dataController.viewContext)
+        
+        location.id = NanoID.generate()
+        location.latitude = latitude
+        location.longitude = longitude
+        location.title = title
+        location.subTitle = subTitle
+        
+        do {
+            try dataController.viewContext.save()
+        } catch {
+            showError(viewController: self, message: error.localizedDescription)
+        }
     }
+    
     
 }

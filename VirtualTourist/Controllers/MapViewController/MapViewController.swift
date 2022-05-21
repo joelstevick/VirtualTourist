@@ -12,12 +12,17 @@ import CoreLocation
 class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
     // MARK: - Properties
     var annotations = [MKPointAnnotation]()
+    let dataController = DataController(modelName: "VirtualTourist")
     
     @IBOutlet weak var mapView: MKMapView!
     
     // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataController.load {
+            // update to Main
+        }
         
         self.mapView.delegate = self
         
