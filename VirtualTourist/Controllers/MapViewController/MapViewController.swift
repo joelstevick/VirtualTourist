@@ -40,15 +40,5 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
      // Pass the selected object to the new view controller.
      }
      */
-    
-    // MARK: - Handlers
-    
-        
-    // MARK: - Utility Methods
-    func navigateToMapDetailView(view: MKAnnotationView) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailViewController.coordinate = view.annotation?.coordinate
-        self.navigationController?.pushViewController(detailViewController, animated: true)
-    }
+
 }
