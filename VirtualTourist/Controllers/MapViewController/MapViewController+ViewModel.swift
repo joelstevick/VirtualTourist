@@ -36,10 +36,11 @@ extension MapViewController {
             NSSortDescriptor(key: "creationDate", ascending: false)
         ]
         
-        guard let locations =  try? dataController.viewContext.fetch(fetchRequest) else {
+        guard let locations = try? dataController.viewContext.fetch(fetchRequest) else {
             showError(viewController: self, message: "Could not read your phone data")
             return
         }
+        
         for location in locations {
             // display in the map view
             addAnnotationToMapView(
@@ -48,6 +49,10 @@ extension MapViewController {
                 latitude: location.latitude,
                 longitude: location.longitude)
         }
+        
+        // preserve locations so that we can pass to other view controllers
+        self.locations = locations
+        
         
     }
     

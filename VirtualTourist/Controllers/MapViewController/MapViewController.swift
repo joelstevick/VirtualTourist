@@ -11,7 +11,7 @@ import CoreLocation
 
 class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapViewDelegate {
     // MARK: - Properties
-    var annotations = [MKPointAnnotation]()
+    var locations = [Location]()
     let dataController = DataController(modelName: "VirtualTourist")
     
     @IBOutlet weak var mapView: MKMapView!
@@ -40,14 +40,13 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate, MKMapVie
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let vc = segue.destination as! TableViewController
+        vc.locations = locations
+    }
+    
+    
 }
