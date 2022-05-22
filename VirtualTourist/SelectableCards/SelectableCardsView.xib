@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectableCardsView" customModule="VirtualTourist" customModuleProvider="target">
             <connections>
                 <outlet property="noPicturesLabel" destination="qoA-kn-Bqf" id="V7V-Zz-RXB"/>
+                <outlet property="scrollView" destination="Yfh-Ci-tf3" id="2jQ-Qd-mms"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

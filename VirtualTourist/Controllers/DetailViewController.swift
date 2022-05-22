@@ -67,7 +67,7 @@ class DetailViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // If this is an ImagePickerViewConroller, we'll configure its `photoUrls`
-        if let vc = segue.destination as? SlidingCardsViewController {
+        if let vc = segue.destination as? AddCardsViewController {
             vc.photoImages = photoImages
         }
     }

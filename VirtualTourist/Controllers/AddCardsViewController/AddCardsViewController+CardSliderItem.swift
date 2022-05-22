@@ -21,7 +21,7 @@ struct Item: CardSliderItem {
     var description: String?
 }
 
-extension SlidingCardsViewController: CardSliderDataSource {
+extension AddCardsViewController: CardSliderDataSource {
     func item(for index: Int) -> CardSliderItem {
         let photoImage = photoImages[index]
         return Item(

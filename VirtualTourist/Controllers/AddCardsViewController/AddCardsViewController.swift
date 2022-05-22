@@ -8,7 +8,7 @@
 import UIKit
 import CardSlider
 
-class SlidingCardsViewController: UIViewController {
+class AddCardsViewController: UIViewController {
 
     // MARK: - Properties
   
