@@ -16,6 +16,7 @@
 		9332302828396E6E0017AF7F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302728396E6E0017AF7F /* TableViewController.swift */; };
 		9332302A2839967B0017AF7F /* MapViewController+CoreData+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933230292839967B0017AF7F /* MapViewController+CoreData+Notifications.swift */; };
 		9332302D2839A4550017AF7F /* ImageSwiperController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302C2839A4550017AF7F /* ImageSwiperController+Gestures.swift */; };
+		93323030283A52750017AF7F /* CardSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 9332302F283A52750017AF7F /* CardSlider */; };
 		93656E042836351C0003B17A /* ImageSwiperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* ImageSwiperController.swift */; };
 		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0828365C1F0003B17A /* GetInfoRespone.swift */; };
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93323026283925BC0017AF7F /* NanoID in Frameworks */,
+				93323030283A52750017AF7F /* CardSlider in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,6 +210,7 @@
 			name = VirtualTourist;
 			packageProductDependencies = (
 				93323025283925BC0017AF7F /* NanoID */,
+				9332302F283A52750017AF7F /* CardSlider */,
 			);
 			productName = VirtualTourist;
 			productReference = 938E1FAB28338EF4007EAB79 /* VirtualTourist.app */;
@@ -239,6 +242,7 @@
 			mainGroup = 938E1FA228338EF4007EAB79;
 			packageReferences = (
 				93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */,
+				9332302E283A52750017AF7F /* XCRemoteSwiftPackageReference "cardslider" */,
 			);
 			productRefGroup = 938E1FAC28338EF4007EAB79 /* Products */;
 			projectDirPath = "";
@@ -516,6 +520,14 @@
 				kind = branch;
 			};
 		};
+		9332302E283A52750017AF7F /* XCRemoteSwiftPackageReference "cardslider" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ramotion/cardslider.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -523,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */;
 			productName = NanoID;
+		};
+		9332302F283A52750017AF7F /* CardSlider */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9332302E283A52750017AF7F /* XCRemoteSwiftPackageReference "cardslider" */;
+			productName = CardSlider;
 		};
 /* End XCSwiftPackageProductDependency section */
 
