@@ -16,8 +16,6 @@ class SlidingCardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print(photoImages)
 
     }
     
