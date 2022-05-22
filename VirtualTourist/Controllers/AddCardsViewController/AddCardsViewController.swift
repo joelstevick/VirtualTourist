@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import CardSlider
+
 
 class AddCardsViewController: UIViewController {
 
@@ -16,12 +16,6 @@ class AddCardsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-//        let vc = CardSliderViewController.with(dataSource: self)
-//        
-//        vc.title = "Locations"
-//        
-//        present(vc, animated: true)
 
     }
     
