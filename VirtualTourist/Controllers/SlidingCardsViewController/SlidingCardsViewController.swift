@@ -8,7 +8,7 @@
 import UIKit
 import CardSlider
 
-class SlidingCardsViewController: UIViewController, UIGestureRecognizerDelegate {
+class SlidingCardsViewController: UIViewController {
 
     // MARK: - Properties
   
