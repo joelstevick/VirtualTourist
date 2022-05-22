@@ -11,15 +11,12 @@ import CardSlider
 class SlidingCardsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Properties
-    @IBOutlet weak var image1View: UIImageView!
-    
-    @IBOutlet weak var image2View: UIImageView!
+  
     var photoImages: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        image1View.image = photoImages[0]
         print(photoImages)
 
     }
