@@ -7,6 +7,6 @@
 
 import Foundation
 
-extension ImageSwiperController {
+extension SlidingCardsViewController {
     
 }

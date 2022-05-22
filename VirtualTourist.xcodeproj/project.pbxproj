@@ -15,9 +15,9 @@
 		93323026283925BC0017AF7F /* NanoID in Frameworks */ = {isa = PBXBuildFile; productRef = 93323025283925BC0017AF7F /* NanoID */; };
 		9332302828396E6E0017AF7F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302728396E6E0017AF7F /* TableViewController.swift */; };
 		9332302A2839967B0017AF7F /* MapViewController+CoreData+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933230292839967B0017AF7F /* MapViewController+CoreData+Notifications.swift */; };
-		9332302D2839A4550017AF7F /* ImageSwiperController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302C2839A4550017AF7F /* ImageSwiperController+Gestures.swift */; };
+		9332302D2839A4550017AF7F /* SlidingCardsViewController+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302C2839A4550017AF7F /* SlidingCardsViewController+Gestures.swift */; };
 		93323030283A52750017AF7F /* CardSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 9332302F283A52750017AF7F /* CardSlider */; };
-		93656E042836351C0003B17A /* ImageSwiperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* ImageSwiperController.swift */; };
+		93656E042836351C0003B17A /* SlidingCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* SlidingCardsViewController.swift */; };
 		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0828365C1F0003B17A /* GetInfoRespone.swift */; };
 		93656E0B28365E4D0003B17A /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0A28365E4D0003B17A /* FetchImage.swift */; };
@@ -44,8 +44,8 @@
 		9332301F283915860017AF7F /* MapViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		9332302728396E6E0017AF7F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		933230292839967B0017AF7F /* MapViewController+CoreData+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+CoreData+Notifications.swift"; sourceTree = "<group>"; };
-		9332302C2839A4550017AF7F /* ImageSwiperController+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageSwiperController+Gestures.swift"; sourceTree = "<group>"; };
-		93656E032836351C0003B17A /* ImageSwiperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSwiperController.swift; sourceTree = "<group>"; };
+		9332302C2839A4550017AF7F /* SlidingCardsViewController+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SlidingCardsViewController+Gestures.swift"; sourceTree = "<group>"; };
+		93656E032836351C0003B17A /* SlidingCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingCardsViewController.swift; sourceTree = "<group>"; };
 		93656E06283654400003B17A /* ShowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 		93656E0828365C1F0003B17A /* GetInfoRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoRespone.swift; sourceTree = "<group>"; };
 		93656E0A28365E4D0003B17A /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
@@ -101,13 +101,13 @@
 			path = MapViewController;
 			sourceTree = "<group>";
 		};
-		9332302B2839A4390017AF7F /* ImageSwiperController */ = {
+		9332302B2839A4390017AF7F /* SlidingCardsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				93656E032836351C0003B17A /* ImageSwiperController.swift */,
-				9332302C2839A4550017AF7F /* ImageSwiperController+Gestures.swift */,
+				93656E032836351C0003B17A /* SlidingCardsViewController.swift */,
+				9332302C2839A4550017AF7F /* SlidingCardsViewController+Gestures.swift */,
 			);
-			path = ImageSwiperController;
+			path = SlidingCardsViewController;
 			sourceTree = "<group>";
 		};
 		93656E05283654300003B17A /* Util */ = {
@@ -186,7 +186,7 @@
 				93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */,
 				9332301828390E150017AF7F /* MapViewController */,
 				93D57EF42834E5D0002CD6EF /* DetailViewController.swift */,
-				9332302B2839A4390017AF7F /* ImageSwiperController */,
+				9332302B2839A4390017AF7F /* SlidingCardsViewController */,
 				9332302728396E6E0017AF7F /* TableViewController.swift */,
 			);
 			path = Controllers;
@@ -278,12 +278,12 @@
 				93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */,
 				938E1FB928338EF4007EAB79 /* VirtualTourist.xcdatamodeld in Sources */,
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
-				9332302D2839A4550017AF7F /* ImageSwiperController+Gestures.swift in Sources */,
+				9332302D2839A4550017AF7F /* SlidingCardsViewController+Gestures.swift in Sources */,
 				9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */,
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
 				9332301E28390F980017AF7F /* MapViewController+Utilities.swift in Sources */,
-				93656E042836351C0003B17A /* ImageSwiperController.swift in Sources */,
+				93656E042836351C0003B17A /* SlidingCardsViewController.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
 				93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */,
 				9332301A28390E370017AF7F /* MapViewController+Gestures.swift in Sources */,

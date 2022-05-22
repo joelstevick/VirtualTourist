@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ImageSwiperController: UIViewController, UIGestureRecognizerDelegate {
+class SlidingCardsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Properties
     @IBOutlet weak var image1View: UIImageView!
