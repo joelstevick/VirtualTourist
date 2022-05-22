@@ -15,7 +15,7 @@
 		93323026283925BC0017AF7F /* NanoID in Frameworks */ = {isa = PBXBuildFile; productRef = 93323025283925BC0017AF7F /* NanoID */; };
 		9332302828396E6E0017AF7F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302728396E6E0017AF7F /* TableViewController.swift */; };
 		9332302A2839967B0017AF7F /* MapViewController+CoreData+Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933230292839967B0017AF7F /* MapViewController+CoreData+Notifications.swift */; };
-		9332302D2839A4550017AF7F /* AddCardsViewController+CardSliderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302C2839A4550017AF7F /* AddCardsViewController+CardSliderItem.swift */; };
+		9332302D2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9332302C2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift */; };
 		93656E042836351C0003B17A /* AddCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E032836351C0003B17A /* AddCardsViewController.swift */; };
 		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0828365C1F0003B17A /* GetInfoRespone.swift */; };
@@ -35,6 +35,7 @@
 		93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08659283AA0DC00E3429F /* SelectableCardsView.swift */; };
 		93F0865C283AA11200E3429F /* SelectableCardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F0865B283AA11200E3429F /* SelectableCardsView.xib */; };
 		93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865D283ACBA100E3429F /* SelectableCard.swift */; };
+		93F08660283AF1B400E3429F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865F283AF1B400E3429F /* Constants.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +47,7 @@
 		9332301F283915860017AF7F /* MapViewController+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+ViewModel.swift"; sourceTree = "<group>"; };
 		9332302728396E6E0017AF7F /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		933230292839967B0017AF7F /* MapViewController+CoreData+Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+CoreData+Notifications.swift"; sourceTree = "<group>"; };
-		9332302C2839A4550017AF7F /* AddCardsViewController+CardSliderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCardsViewController+CardSliderItem.swift"; sourceTree = "<group>"; };
+		9332302C2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddCardsViewController+SelectableCardDataSource.swift"; sourceTree = "<group>"; };
 		93656E032836351C0003B17A /* AddCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardsViewController.swift; sourceTree = "<group>"; };
 		93656E06283654400003B17A /* ShowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 		93656E0828365C1F0003B17A /* GetInfoRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoRespone.swift; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		93F08659283AA0DC00E3429F /* SelectableCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCardsView.swift; sourceTree = "<group>"; };
 		93F0865B283AA11200E3429F /* SelectableCardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableCardsView.xib; sourceTree = "<group>"; };
 		93F0865D283ACBA100E3429F /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
+		93F0865F283AF1B400E3429F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				93656E032836351C0003B17A /* AddCardsViewController.swift */,
-				9332302C2839A4550017AF7F /* AddCardsViewController+CardSliderItem.swift */,
+				9332302C2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift */,
 			);
 			path = AddCardsViewController;
 			sourceTree = "<group>";
@@ -190,6 +192,7 @@
 				93F08659283AA0DC00E3429F /* SelectableCardsView.swift */,
 				93F0865B283AA11200E3429F /* SelectableCardsView.xib */,
 				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
+				93F0865F283AF1B400E3429F /* Constants.swift */,
 			);
 			path = SelectableCards;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F08660283AF1B400E3429F /* Constants.swift in Sources */,
 				93656E0B28365E4D0003B17A /* FetchImage.swift in Sources */,
 				93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */,
 				93656E07283654400003B17A /* ShowError.swift in Sources */,
@@ -292,7 +296,7 @@
 				93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */,
 				938E1FB928338EF4007EAB79 /* VirtualTourist.xcdatamodeld in Sources */,
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
-				9332302D2839A4550017AF7F /* AddCardsViewController+CardSliderItem.swift in Sources */,
+				9332302D2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift in Sources */,
 				9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */,
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
