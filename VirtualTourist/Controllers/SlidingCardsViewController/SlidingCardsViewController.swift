@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CardSlider
 
 class SlidingCardsViewController: UIViewController, UIGestureRecognizerDelegate {
 
