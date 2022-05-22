@@ -7,10 +7,16 @@
 
 import UIKit
 
+protocol SelectableCardsDataSource {
+    func getNumberOfCards() -> Int
+    func getCardAtIndex(at index: Int) -> SelectableCard
+}
 class SelectableCardsView: UIView {
     
     // MARK: - Properties
     @IBOutlet weak var noPicturesLabel: UILabel!
+    
+    var delegate: SelectableCardsDataSource?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
