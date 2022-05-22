@@ -73,6 +73,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wef-Y8-8FT" customClass="SelectableCardsView" customModule="VirtualTourist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="C9c-Bw-A1d">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
@@ -80,8 +84,12 @@
                         <viewLayoutGuide key="safeArea" id="m6b-Eb-6vz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="wef-Y8-8FT" firstAttribute="leading" secondItem="m6b-Eb-6vz" secondAttribute="leading" id="FyB-Vi-aBb"/>
                             <constraint firstItem="C9c-Bw-A1d" firstAttribute="centerX" secondItem="0cl-bO-h5j" secondAttribute="centerX" id="RTT-Lo-acZ"/>
                             <constraint firstItem="C9c-Bw-A1d" firstAttribute="centerY" secondItem="0cl-bO-h5j" secondAttribute="centerY" id="Vhs-pN-KOJ"/>
+                            <constraint firstItem="wef-Y8-8FT" firstAttribute="top" secondItem="m6b-Eb-6vz" secondAttribute="top" id="XYB-1s-0ha"/>
+                            <constraint firstItem="m6b-Eb-6vz" firstAttribute="trailing" secondItem="wef-Y8-8FT" secondAttribute="trailing" id="giR-J5-JuZ"/>
+                            <constraint firstItem="m6b-Eb-6vz" firstAttribute="bottom" secondItem="wef-Y8-8FT" secondAttribute="bottom" id="lJt-oN-nC2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="pGm-L8-iKr">
