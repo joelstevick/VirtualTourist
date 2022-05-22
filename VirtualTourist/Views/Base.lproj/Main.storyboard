@@ -80,16 +80,24 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="C9c-Bw-A1d">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zpQ-ef-sq9">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="m6b-Eb-6vz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wef-Y8-8FT" firstAttribute="leading" secondItem="m6b-Eb-6vz" secondAttribute="leading" id="FyB-Vi-aBb"/>
+                            <constraint firstItem="m6b-Eb-6vz" firstAttribute="bottom" secondItem="zpQ-ef-sq9" secondAttribute="bottom" id="Ol6-df-y5K"/>
                             <constraint firstItem="C9c-Bw-A1d" firstAttribute="centerX" secondItem="0cl-bO-h5j" secondAttribute="centerX" id="RTT-Lo-acZ"/>
                             <constraint firstItem="C9c-Bw-A1d" firstAttribute="centerY" secondItem="0cl-bO-h5j" secondAttribute="centerY" id="Vhs-pN-KOJ"/>
+                            <constraint firstItem="zpQ-ef-sq9" firstAttribute="leading" secondItem="m6b-Eb-6vz" secondAttribute="leading" id="XDq-kL-gIQ"/>
                             <constraint firstItem="wef-Y8-8FT" firstAttribute="top" secondItem="m6b-Eb-6vz" secondAttribute="top" id="XYB-1s-0ha"/>
                             <constraint firstItem="m6b-Eb-6vz" firstAttribute="trailing" secondItem="wef-Y8-8FT" secondAttribute="trailing" id="giR-J5-JuZ"/>
+                            <constraint firstItem="m6b-Eb-6vz" firstAttribute="trailing" secondItem="zpQ-ef-sq9" secondAttribute="trailing" id="kh4-9H-tNr"/>
                             <constraint firstItem="m6b-Eb-6vz" firstAttribute="bottom" secondItem="wef-Y8-8FT" secondAttribute="bottom" id="lJt-oN-nC2"/>
+                            <constraint firstItem="zpQ-ef-sq9" firstAttribute="top" secondItem="m6b-Eb-6vz" secondAttribute="top" id="mmu-vV-q8L"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tour" id="pGm-L8-iKr">
@@ -116,10 +124,25 @@
                     <view key="view" contentMode="scaleToFill" id="QT7-UU-NZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDt-iq-mWK" customClass="SelectableCardsView" customModule="VirtualTourist" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="a4i-i2-ZFV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iDt-iq-mWK" firstAttribute="leading" secondItem="a4i-i2-ZFV" secondAttribute="leading" id="KIX-gK-WVQ"/>
+                            <constraint firstItem="a4i-i2-ZFV" firstAttribute="bottom" secondItem="iDt-iq-mWK" secondAttribute="bottom" id="LgM-Jz-Onx"/>
+                            <constraint firstItem="a4i-i2-ZFV" firstAttribute="trailing" secondItem="iDt-iq-mWK" secondAttribute="trailing" id="SHW-Ch-WF4"/>
+                            <constraint firstItem="iDt-iq-mWK" firstAttribute="top" secondItem="a4i-i2-ZFV" secondAttribute="top" id="w1p-BP-kxa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Pictures" id="XfA-kZ-ytY"/>
+                    <connections>
+                        <outlet property="selectableCardView" destination="iDt-iq-mWK" id="Scw-vz-mhI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z3o-jQ-hyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

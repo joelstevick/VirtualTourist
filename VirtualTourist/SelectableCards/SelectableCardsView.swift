@@ -29,15 +29,14 @@ class SelectableCardsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupView()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
     }
     
-    func setupView() {
+    override func draw(_ rect: CGRect) {
+      
         // get the view
         let viewFromXib = Bundle.main.loadNibNamed("SelectableCardsView", owner: self, options: nil)![0] as! UIView
         viewFromXib.frame = self.bounds
@@ -61,14 +60,14 @@ class SelectableCardsView: UIView {
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
                 imageView.frame.size.width = Constants.cardWidth
-                imageView.frame.size.height = viewFromXib.bounds.height
+                imageView.frame.size.height = rect.height
                 imageView.frame.origin.x = (Constants.cardWidth * Double(i))
                 imageView.frame.origin.y = 0.0
                 
                 scrollView.addSubview(imageView)
             }
             
-            scrollView.contentSize = CGSize(width: Constants.cardWidth * Double(numberOfCards), height: viewFromXib.bounds.height)
+            scrollView.contentSize = CGSize(width: Constants.cardWidth * Double(numberOfCards), height: rect.height)
         }
     }
 }
