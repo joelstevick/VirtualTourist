@@ -12,12 +12,11 @@ protocol SelectableCardsDataSource {
     func getCardAtIndex(at index: Int) -> SelectableCard
     func canRemoveCards() -> Bool
     func cardRemoved(at index: Int) -> Void
+    func cardSelectionChanged(at index: Int, selected: Bool) -> Void
 }
 
 extension SelectableCardsDataSource {
-    func cardRemoved(at index: Int) {
-        
-    }
+    func cardRemoved(at index: Int) {}
 }
 class SelectableCardsView: UIView {
     
@@ -29,6 +28,8 @@ class SelectableCardsView: UIView {
     var scrollView: UIScrollView!
     var pageControl: UIPageControl!
     var numberOfCards: Int!
+    
+    var selectionState = [Int: Bool]()
     
     var configured = false
     

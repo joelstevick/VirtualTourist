@@ -10,8 +10,20 @@ import UIKit
 
 extension SelectableCardsView {
     @objc func gestureFired(_ gestureRecognizer: UILongPressGestureRecognizer) {
+        
         if gestureRecognizer.state == UIGestureRecognizer.State.began {
-            print("gesture fired", pageControl.currentPage)
+            // toggle the current selection state
+            if selectionState[pageControl.currentPage] != nil {
+                selectionState[pageControl.currentPage] = !selectionState[pageControl.currentPage]!
+            } else {
+                selectionState[pageControl.currentPage] = true
+            }
+            
+            // notify the delegate
+            if let delegate = delegate {
+                delegate.cardSelectionChanged(at: pageControl.currentPage,
+                                              selected: selectionState[pageControl.currentPage]!)
+            }
         }
         
     }

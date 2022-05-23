@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 extension AddCardsViewController: SelectableCardsDataSource {
+    func cardSelectionChanged(at index: Int, selected: Bool) {
+        print("card selection state changed", index, selected)
+    }
+    
     func getNumberOfCards() -> Int {
         photoImages.count
     }
