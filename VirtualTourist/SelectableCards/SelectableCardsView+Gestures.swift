@@ -25,7 +25,7 @@ extension SelectableCardsView {
             
             // notify the delegate
             if let delegate = delegate {
-                delegate.cardSelectionChanged(at: pageControl.currentPage,
+                delegate.cardSelectionChanged(card: cards[pageControl.currentPage]!,
                                               selected: selectionState[pageControl.currentPage]!)
             }
         }

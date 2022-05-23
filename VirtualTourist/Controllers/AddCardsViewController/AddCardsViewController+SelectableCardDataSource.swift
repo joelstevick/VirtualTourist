@@ -10,9 +10,14 @@ import UIKit
 import NanoID
 
 extension AddCardsViewController: SelectableCardsDataSource {
-    func cardSelectionChanged(at index: Int, selected: Bool) {
-        print("card selection state changed", index, selected)
+    func cardRemoved(card: SelectableCard) {
+        print("card selection state removed", card)
     }
+    
+    func cardSelectionChanged(card: SelectableCard, selected: Bool) {
+        print("card selection state changed", card, selected)
+    }
+    
     
     func getNumberOfCards() -> Int {
         photoImages.count

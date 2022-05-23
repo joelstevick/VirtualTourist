@@ -11,8 +11,8 @@ protocol SelectableCardsDataSource {
     func getNumberOfCards() -> Int
     func getCardAtIndex(at index: Int) -> SelectableCard
     func canRemoveCards() -> Bool
-    func cardRemoved(at index: Int) -> Void
-    func cardSelectionChanged(at index: Int, selected: Bool) -> Void
+    func cardRemoved(card: SelectableCard) -> Void
+    func cardSelectionChanged(card: SelectableCard, selected: Bool) -> Void
 }
 
 extension SelectableCardsDataSource {
