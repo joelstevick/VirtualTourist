@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
             
             // get the photo URLs
             let photoUrls = await search(coordinate: coordinate, viewController: self)
+            photoImages.removeAll()
             
             // download the images in parallel
             let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
