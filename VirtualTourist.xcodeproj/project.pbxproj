@@ -38,7 +38,7 @@
 		93F08664283B898200E3429F /* SelectableCardsView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */; };
 		93F08666283B8C8A00E3429F /* SelectableCardsView+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */; };
 		93F08668283B97FD00E3429F /* SelectableCardsView+VisualCues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */; };
-		93F0866B283BAC2100E3429F /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866A283BAC2100E3429F /* State.swift */; };
+		93F0866B283BAC2100E3429F /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866A283BAC2100E3429F /* StateService.swift */; };
 		93F0866E283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866D283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -76,7 +76,7 @@
 		93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Gestures.swift"; sourceTree = "<group>"; };
 		93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Reload.swift"; sourceTree = "<group>"; };
 		93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+VisualCues.swift"; sourceTree = "<group>"; };
-		93F0866A283BAC2100E3429F /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		93F0866A283BAC2100E3429F /* StateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateService.swift; sourceTree = "<group>"; };
 		93F0866D283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+SelectableCardDataSource.swift"; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,7 +211,7 @@
 		93F08669283BAC1200E3429F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				93F0866A283BAC2100E3429F /* State.swift */,
+				93F0866A283BAC2100E3429F /* StateService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -344,7 +344,7 @@
 				9332302A2839967B0017AF7F /* MapViewController+CoreData+Notifications.swift in Sources */,
 				93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */,
 				93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */,
-				93F0866B283BAC2100E3429F /* State.swift in Sources */,
+				93F0866B283BAC2100E3429F /* StateService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

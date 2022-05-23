@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         self.activityIndicator.startAnimating()
         
         Task {
-            await State.shared.load(coordinate: coordinate, viewController: self, completion:  {
+            await StateService.shared.load(coordinate: coordinate, viewController: self, completion:  {
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }

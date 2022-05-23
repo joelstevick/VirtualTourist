@@ -10,9 +10,9 @@ import CoreLocation
 import UIKit
 import NanoID
 
-class State {
+class StateService {
     
-    static public let shared = State()
+    static public let shared = StateService()
     
     private init() {
         

@@ -13,11 +13,11 @@ extension DetailViewController: SelectableCardsDataSource {
     }
     
     func getNumberOfCards() -> Int {
-        State.shared.selectedCards.count
+        StateService.shared.selectedCards.count
     }
     
     func getCardAtIndex(at index: Int) -> SelectableCard {
-        return State.shared.selectedCards[index]
+        return StateService.shared.selectedCards[index]
     }
     
     func canRemoveCards() -> Bool {
