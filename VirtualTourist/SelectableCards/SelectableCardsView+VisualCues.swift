@@ -36,6 +36,7 @@ extension SelectableCardsView {
             label.font = label.font.withSize(40)
             label.frame.origin = CGPoint(x: (Int(frame.width) - labelWidth)/2, y: 0)
             label.frame.size = CGSize(width: labelWidth, height: 40)
+            label.alpha = 0.5
             
             imageView.addSubview(label)
             
