@@ -17,7 +17,7 @@ extension SelectableCardsView {
     func applyVisualCue(cardIndex: Int, visualCue: CardVisualCue) {
         // remove current visual cue
         if  let visualCueView = currentVisualCue[cardIndex] {
-            visualCueView.removeFromSuperview()
+            visualCueView.isHidden = true
         }
         
         // apply the new visual que
@@ -38,6 +38,8 @@ extension SelectableCardsView {
             
             imageView.addSubview(label)
             
+            currentVisualCue[cardIndex] = label
+            
             // selected
         case .Selected:
             let checkView = UIImageView()
@@ -46,6 +48,8 @@ extension SelectableCardsView {
             checkView.frame.size = CGSize(width: labelWidth, height: 40)
             
             imageView.addSubview(checkView)
+            
+            currentVisualCue[cardIndex] = checkView
             
         }
     }
