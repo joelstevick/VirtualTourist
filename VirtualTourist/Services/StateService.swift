@@ -76,7 +76,7 @@ class StateService {
     
     func getAvailableCards() -> [SelectableCard] {
         return cards.filter { card in
-            return card.selected == nil || !card.selected
+            return !card.selected
         }
     }
 }
