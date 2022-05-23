@@ -71,7 +71,7 @@ class SelectableCardsView: UIView {
             
             // create a containerView
             let containerView = UIView()
-            containerView.frame.size = CGSize(width: imageWidth * Double(numberOfCards), height: frame.height)
+            containerView.frame.size = CGSize(width: imageWidth * Double(numberOfCards), height: frame.height - paginatorHeight)
             
             scrollView.addSubview(containerView)
             
@@ -87,7 +87,7 @@ class SelectableCardsView: UIView {
                 imageView.layer.borderColor = UIColor.blue.cgColor
                 imageView.layer.borderWidth = 1
                 imageView.frame.size.width = imageWidth
-                imageView.frame.size.height = rect.height
+                imageView.frame.size.height = rect.height - paginatorHeight
                 imageView.frame.origin.x = (imageWidth * Double(i))
                 imageView.frame.origin.y = 0.0
                 imageView.contentMode = UIView.ContentMode.scaleAspectFill
