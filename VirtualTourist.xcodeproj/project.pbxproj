@@ -36,6 +36,7 @@
 		93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865D283ACBA100E3429F /* SelectableCard.swift */; };
 		93F08662283B861F00E3429F /* SelectableCardsView+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */; };
 		93F08664283B898200E3429F /* SelectableCardsView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */; };
+		93F08666283B8C8A00E3429F /* SelectableCardsView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08665283B8C8A00E3429F /* SelectableCardsView+Configure.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		93F0865D283ACBA100E3429F /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
 		93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+ScrollView.swift"; sourceTree = "<group>"; };
 		93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Gestures.swift"; sourceTree = "<group>"; };
+		93F08665283B8C8A00E3429F /* SelectableCardsView+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Configure.swift"; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
 				93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */,
 				93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */,
+				93F08665283B8C8A00E3429F /* SelectableCardsView+Configure.swift */,
 			);
 			path = SelectableCards;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,
 				9332301E28390F980017AF7F /* MapViewController+Utilities.swift in Sources */,
 				93656E042836351C0003B17A /* AddCardsViewController.swift in Sources */,
+				93F08666283B8C8A00E3429F /* SelectableCardsView+Configure.swift in Sources */,
 				93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
 				93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */,
