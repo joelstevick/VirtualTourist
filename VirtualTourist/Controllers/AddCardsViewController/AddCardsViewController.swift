@@ -13,8 +13,6 @@ class AddCardsViewController: UIViewController {
     // MARK: - Properties
     @IBOutlet weak var selectableCardView: SelectableCardsView!
     
-    var photoImages: [UIImage]!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

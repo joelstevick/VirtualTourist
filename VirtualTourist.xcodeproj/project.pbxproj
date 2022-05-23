@@ -39,6 +39,7 @@
 		93F08666283B8C8A00E3429F /* SelectableCardsView+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */; };
 		93F08668283B97FD00E3429F /* SelectableCardsView+VisualCues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */; };
 		93F0866B283BAC2100E3429F /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866A283BAC2100E3429F /* State.swift */; };
+		93F0866E283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866D283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +77,7 @@
 		93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Reload.swift"; sourceTree = "<group>"; };
 		93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+VisualCues.swift"; sourceTree = "<group>"; };
 		93F0866A283BAC2100E3429F /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		93F0866D283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+SelectableCardDataSource.swift"; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,13 +216,22 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		93F0866C283BCC0C00E3429F /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				93D57EF42834E5D0002CD6EF /* DetailViewController.swift */,
+				93F0866D283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
 		93F6FB5A28339548006C55D3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				938E1FB228338EF4007EAB79 /* ViewController.swift */,
 				93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */,
 				9332301828390E150017AF7F /* MapViewController */,
-				93D57EF42834E5D0002CD6EF /* DetailViewController.swift */,
+				93F0866C283BCC0C00E3429F /* DetailViewController */,
 				9332302B2839A4390017AF7F /* AddCardsViewController */,
 				9332302728396E6E0017AF7F /* TableViewController.swift */,
 			);
@@ -312,6 +323,7 @@
 				93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */,
 				938E1FB928338EF4007EAB79 /* VirtualTourist.xcdatamodeld in Sources */,
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,
+				93F0866E283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift in Sources */,
 				9332302D2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift in Sources */,
 				9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */,
 				93F08662283B861F00E3429F /* SelectableCardsView+ScrollView.swift in Sources */,

@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var photoImages = [UIImage]()
+    @IBOutlet weak var selectableCardView: SelectableCardsView!
     
     
     // MARK: - Actions
@@ -42,10 +42,10 @@ class DetailViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // If this is an ImagePickerViewConroller, we'll configure its `photoUrls`
-        if let vc = segue.destination as? AddCardsViewController {
-            vc.photoImages = photoImages
-        }
+//        // If this is an ImagePickerViewConroller, we'll configure its `photoUrls`
+//        if let vc = segue.destination as? AddCardsViewController {
+//           
+//        }
     }
     
     // MARK: - Utility functions
