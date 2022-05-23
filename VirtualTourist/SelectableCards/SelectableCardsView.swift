@@ -25,6 +25,12 @@ class SelectableCardsView: UIView {
     @IBOutlet weak var noPicturesLabel: UILabel!
     
     var delegate: SelectableCardsDataSource?
+    var imageWidth: Double!
+    var scrollView: UIScrollView!
+    var pageControl: UIPageControl!
+    var numberOfCards: Int!
+    
+    var configured = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,21 +39,29 @@ class SelectableCardsView: UIView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
     override func draw(_ rect: CGRect) {
+        if (!configured) {
+            configure()
+        }
+    }
+    func configure() {
       
+        configured = true
+        
+        let rect = CGRect(origin:frame.origin, size:frame.size)
+        
         // query the delegate for the number of pictures
         if let delegate = delegate {
-            let numberOfCards = delegate.getNumberOfCards()
+            numberOfCards = delegate.getNumberOfCards()
             
             guard numberOfCards > 0 else {
                 noPicturesLabel.isHidden = true
                 return
             }
-            let imageWidth = rect.width
+            imageWidth = rect.width
             
             // create the scrollView
-            let scrollView = UIScrollView(frame: rect)
+            scrollView = UIScrollView(frame: rect)
             scrollView.autoresizingMask = [.flexibleWidth]
             scrollView.backgroundColor = .white
             scrollView.isPagingEnabled = true
@@ -56,7 +70,7 @@ class SelectableCardsView: UIView {
             // add a paginator
             let paginatorHeight = 70.0
             
-            let pageControl: UIPageControl = {
+            pageControl = {
                 let pageControl = UIPageControl()
                 pageControl.numberOfPages = numberOfCards
                 pageControl.frame = CGRect(
@@ -68,6 +82,9 @@ class SelectableCardsView: UIView {
                 return pageControl
             }()
             addSubview(pageControl)
+            
+            // listen for changes to the page control
+            pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .valueChanged)
             
             // create a containerView
             let containerView = UIView()
@@ -84,8 +101,6 @@ class SelectableCardsView: UIView {
                 // setup the image view
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
-                imageView.layer.borderColor = UIColor.blue.cgColor
-                imageView.layer.borderWidth = 1
                 imageView.frame.size.width = imageWidth
                 imageView.frame.size.height = rect.height - paginatorHeight
                 imageView.frame.origin.x = (imageWidth * Double(i))
@@ -100,5 +115,14 @@ class SelectableCardsView: UIView {
     
             print(scrollView.contentSize)
         }
+    }
+    
+    @objc private func pageControlValueChanged(_ sender: UIPageControl) {
+        let current = sender.currentPage
+        
+        scrollView.setContentOffset(CGPoint(
+            x: CGFloat(current) * frame.width,
+            y: 0
+        ), animated: true)
     }
 }
