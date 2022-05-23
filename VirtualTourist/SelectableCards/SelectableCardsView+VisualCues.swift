@@ -15,6 +15,12 @@ enum CardVisualCue: String {
 extension SelectableCardsView {
     
     func applyVisualCue(cardIndex: Int, visualCue: CardVisualCue) {
+        // remove current visual cue
+        if  let visualCueView = currentVisualCue[cardIndex] {
+            visualCueView.removeFromSuperview()
+        }
+        
+        // apply the new visual que
         let imageView = imageViews[cardIndex]!
         let labelWidth = 260
     
