@@ -19,6 +19,10 @@ extension SelectableCardsView {
                 selectionState[pageControl.currentPage] = true
             }
             
+            // apply visual cue
+            applyVisualCue(cardIndex: pageControl.currentPage,
+                           visualCue: selectionState[pageControl.currentPage]! ? CardVisualCue.Selected : CardVisualCue.Default)
+            
             // notify the delegate
             if let delegate = delegate {
                 delegate.cardSelectionChanged(at: pageControl.currentPage,

@@ -25,6 +25,8 @@ extension SelectableCardsView {
         let labelWidth = 260
     
         switch visualCue {
+    
+            // press to select
         case .Default:
         let label = UILabel()
             label.text = "Press to select"
@@ -36,8 +38,14 @@ extension SelectableCardsView {
             
             imageView.addSubview(label)
             
+            // selected
         case .Selected:
-        break
+            let checkView = UIImageView()
+            checkView.image =  UIImage.checkmark
+            checkView.frame.origin = CGPoint(x: (Int(frame.width) - labelWidth)/2, y: 0)
+            checkView.frame.size = CGSize(width: labelWidth, height: 40)
+            
+            imageView.addSubview(checkView)
             
         }
     }
