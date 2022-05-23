@@ -23,7 +23,6 @@ class SelectableCardsView: UIView {
     
     // MARK: - Properties
     @IBOutlet weak var noPicturesLabel: UILabel!
-    @IBOutlet weak var scrollView: UIScrollView!
     
     var delegate: SelectableCardsDataSource?
     
@@ -37,11 +36,12 @@ class SelectableCardsView: UIView {
     
     override func draw(_ rect: CGRect) {
       
-        // get the view
-        let viewFromXib = Bundle.main.loadNibNamed("SelectableCardsView", owner: self, options: nil)![0] as! UIView
-        viewFromXib.frame = self.bounds
-        addSubview(viewFromXib)
-        
+        // create the scrollView
+        let scrollView = UIScrollView(frame: rect)
+        scrollView.autoresizingMask = [.flexibleWidth]
+        scrollView.backgroundColor = .white
+        addSubview(scrollView)
+
         // query the delegate for the number of pictures
         if let delegate = delegate {
             let numberOfCards = delegate.getNumberOfCards()
@@ -50,12 +50,18 @@ class SelectableCardsView: UIView {
                 noPicturesLabel.isHidden = true
                 return
             }
+            // create a containerView
+            let containerView = UIView()
+            containerView.frame.size = CGSize(width: Constants.cardWidth * Double(numberOfCards), height: 300.0)
+            
+            scrollView.addSubview(containerView)
             
             // get each of the cards
             for i in 0..<numberOfCards {
                 // get the card
                 let card = delegate.getCardAtIndex(at: i)
                 
+                scrollView.addSubview(containerView)
                 // setup the image view
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
@@ -63,11 +69,15 @@ class SelectableCardsView: UIView {
                 imageView.frame.size.height = rect.height
                 imageView.frame.origin.x = (Constants.cardWidth * Double(i))
                 imageView.frame.origin.y = 0.0
+                imageView.contentMode = UIView.ContentMode.scaleAspectFill
+                imageView.layer.masksToBounds = true
                 
-                scrollView.addSubview(imageView)
+                containerView.addSubview(imageView)
             }
             
-            scrollView.contentSize = CGSize(width: Constants.cardWidth * Double(numberOfCards), height: rect.height)
+            scrollView.contentSize = containerView.frame.size
+    
+            print(scrollView.contentSize)
         }
     }
 }

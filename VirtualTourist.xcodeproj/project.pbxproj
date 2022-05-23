@@ -33,7 +33,6 @@
 		93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFA2834ECBD002CD6EF /* Search.swift */; };
 		93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFC2834F237002CD6EF /* SearchResponse.swift */; };
 		93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08659283AA0DC00E3429F /* SelectableCardsView.swift */; };
-		93F0865C283AA11200E3429F /* SelectableCardsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F0865B283AA11200E3429F /* SelectableCardsView.xib */; };
 		93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865D283ACBA100E3429F /* SelectableCard.swift */; };
 		93F08660283AF1B400E3429F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865F283AF1B400E3429F /* Constants.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
@@ -67,7 +66,6 @@
 		93D57EFA2834ECBD002CD6EF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		93D57EFC2834F237002CD6EF /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		93F08659283AA0DC00E3429F /* SelectableCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCardsView.swift; sourceTree = "<group>"; };
-		93F0865B283AA11200E3429F /* SelectableCardsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectableCardsView.xib; sourceTree = "<group>"; };
 		93F0865D283ACBA100E3429F /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
 		93F0865F283AF1B400E3429F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 			isa = PBXGroup;
 			children = (
 				93F08659283AA0DC00E3429F /* SelectableCardsView.swift */,
-				93F0865B283AA11200E3429F /* SelectableCardsView.xib */,
 				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
 				93F0865F283AF1B400E3429F /* Constants.swift */,
 			);
@@ -274,7 +271,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93F0865C283AA11200E3429F /* SelectableCardsView.xib in Resources */,
 				938E1FBE28338EF9007EAB79 /* LaunchScreen.storyboard in Resources */,
 				938E1FBB28338EF9007EAB79 /* Assets.xcassets in Resources */,
 				938E1FB628338EF4007EAB79 /* Main.storyboard in Resources */,
