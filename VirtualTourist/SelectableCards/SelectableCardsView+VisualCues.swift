@@ -21,8 +21,11 @@ extension SelectableCardsView {
         case .Default:
         let label = UILabel()
             label.text = "Press to select"
-            label.frame.origin = CGPoint(x: 0, y: 0)
-            label.frame.size = CGSize(width: 50, height: 20)
+            label.textColor = .white
+            label.backgroundColor = .systemGray
+            label.font = label.font.withSize(40)
+            label.frame.origin = CGPoint(x: 30, y: 5)
+            label.frame.size = CGSize(width: 260, height: 40)
             
             imageView.addSubview(label)
             
