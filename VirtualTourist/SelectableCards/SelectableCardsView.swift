@@ -67,6 +67,9 @@ class SelectableCardsView: UIView {
             scrollView.isPagingEnabled = true
             addSubview(scrollView)
             
+            // wire-up the scrollView to the page control
+            scrollView.delegate = self
+            
             // add a paginator
             let paginatorHeight = 70.0
             
@@ -83,7 +86,7 @@ class SelectableCardsView: UIView {
             }()
             addSubview(pageControl)
             
-            // listen for changes to the page control
+            // wire-up the page control to the scrollView
             pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .valueChanged)
             
             // create a containerView
