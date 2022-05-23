@@ -40,6 +40,7 @@ class SelectableCardsView: UIView {
         let scrollView = UIScrollView(frame: rect)
         scrollView.autoresizingMask = [.flexibleWidth]
         scrollView.backgroundColor = .white
+        scrollView.isPagingEnabled = true
         addSubview(scrollView)
 
         // query the delegate for the number of pictures
@@ -50,9 +51,11 @@ class SelectableCardsView: UIView {
                 noPicturesLabel.isHidden = true
                 return
             }
+            let imageWidth = rect.width
+            
             // create a containerView
             let containerView = UIView()
-            containerView.frame.size = CGSize(width: Constants.cardWidth * Double(numberOfCards), height: 300.0)
+            containerView.frame.size = CGSize(width: imageWidth * Double(numberOfCards), height: frame.height)
             
             scrollView.addSubview(containerView)
             
@@ -65,9 +68,9 @@ class SelectableCardsView: UIView {
                 // setup the image view
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
-                imageView.frame.size.width = Constants.cardWidth
+                imageView.frame.size.width = imageWidth
                 imageView.frame.size.height = rect.height
-                imageView.frame.origin.x = (Constants.cardWidth * Double(i))
+                imageView.frame.origin.x = (imageWidth * Double(i))
                 imageView.frame.origin.y = 0.0
                 imageView.contentMode = UIView.ContentMode.scaleAspectFill
                 imageView.layer.masksToBounds = true
