@@ -68,6 +68,8 @@ class SelectableCardsView: UIView {
                 // setup the image view
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
+                imageView.layer.borderColor = UIColor.blue.cgColor
+                imageView.layer.borderWidth = 1
                 imageView.frame.size.width = imageWidth
                 imageView.frame.size.height = rect.height
                 imageView.frame.origin.x = (imageWidth * Double(i))
