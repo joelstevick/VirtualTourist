@@ -16,6 +16,7 @@ extension SelectableCardsView {
     
     func applyVisualCue(cardIndex: Int, visualCue: CardVisualCue) {
         let imageView = imageViews[cardIndex]!
+        let labelWidth = 260
     
         switch visualCue {
         case .Default:
@@ -24,8 +25,8 @@ extension SelectableCardsView {
             label.textColor = .white
             label.backgroundColor = .systemGray
             label.font = label.font.withSize(40)
-            label.frame.origin = CGPoint(x: 30, y: 5)
-            label.frame.size = CGSize(width: 260, height: 40)
+            label.frame.origin = CGPoint(x: (Int(frame.width) - labelWidth)/2, y: 5)
+            label.frame.size = CGSize(width: labelWidth, height: 400
             
             imageView.addSubview(label)
             
