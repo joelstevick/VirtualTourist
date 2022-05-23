@@ -11,4 +11,5 @@ import UIKit
 struct SelectableCard {
     let id: String
     let uiImage: UIImage
+    let selected: Bool
 }

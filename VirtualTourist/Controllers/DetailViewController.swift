@@ -16,53 +16,28 @@ class DetailViewController: UIViewController {
     
     var photoImages = [UIImage]()
     
+    
     // MARK: - Actions
     @IBAction func addPressed(_ sender: Any) {
-        Task {
-            self.activityIndicator.startAnimating()
-            
-            // get the photo URLs
-            let photoUrls = await search(coordinate: coordinate, viewController: self)
-            photoImages.removeAll()
-            
-            // download the images in parallel
-            let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
-         
-            for photoUrl in photoUrls {
-                // execute in parallel threads
-                queue.async {
-                    
-                    Task {
-                        // download the image
-                        let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!, viewController: self)
-                        
-                        // need to serialize on the main thread
-                        DispatchQueue.main.async {
-                            Task {
-                                
-                                // add to the list
-                                if let photoImage = photoImage {
-                                    self.photoImages.append(photoImage)
-                                    
-                                    // If all images loaded, perform the segue
-                                    if self.photoImages.count == photoUrls.count {
-                                        // perform the segue
-                                        self.activityIndicator.stopAnimating()
-                                        
-                                        self.performSegue(withIdentifier: "AddPicture", sender: self)
-                                    }
-                                }
-                                
-                            }
-                        }
-                    }
-                }
-            }
-            
-        }
+        // perform the segue
+        self.activityIndicator.stopAnimating()
+        
+        self.performSegue(withIdentifier: "AddPicture", sender: self)
     }
+    // MARK: - Lifecyle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.activityIndicator.startAnimating()
+        
+        Task {
+            await State.shared.load(coordinate: coordinate, viewController: self, completion:  {
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+                
+            })
+        }
+    
     }
     
     // MARK: - Navigation

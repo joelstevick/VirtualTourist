@@ -20,11 +20,11 @@ extension AddCardsViewController: SelectableCardsDataSource {
     
     
     func getNumberOfCards() -> Int {
-        photoImages.count
+        State.shared.availableCards.count
     }
     
     func getCardAtIndex(at index: Int) -> SelectableCard {
-        return SelectableCard(id: NanoID.generate(), uiImage: photoImages[index])
+        return State.shared.availableCards[index]
     }
     
     func canRemoveCards() -> Bool {
