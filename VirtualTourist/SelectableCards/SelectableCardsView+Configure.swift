@@ -65,6 +65,8 @@ extension SelectableCardsView {
                 // get the card
                 let card = delegate.getCardAtIndex(at: i)
                 
+                cards[i] = card
+                
                 scrollView.addSubview(containerView)
                 
                 // setup the image view
