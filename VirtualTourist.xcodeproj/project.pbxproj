@@ -35,6 +35,7 @@
 		93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08659283AA0DC00E3429F /* SelectableCardsView.swift */; };
 		93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865D283ACBA100E3429F /* SelectableCard.swift */; };
 		93F08662283B861F00E3429F /* SelectableCardsView+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */; };
+		93F08664283B898200E3429F /* SelectableCardsView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		93F08659283AA0DC00E3429F /* SelectableCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCardsView.swift; sourceTree = "<group>"; };
 		93F0865D283ACBA100E3429F /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
 		93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+ScrollView.swift"; sourceTree = "<group>"; };
+		93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Gestures.swift"; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 				93F08659283AA0DC00E3429F /* SelectableCardsView.swift */,
 				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
 				93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */,
+				93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */,
 			);
 			path = SelectableCards;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */,
 				93656E07283654400003B17A /* ShowError.swift in Sources */,
 				9332302828396E6E0017AF7F /* TableViewController.swift in Sources */,
+				93F08664283B898200E3429F /* SelectableCardsView+Gestures.swift in Sources */,
 				93323020283915860017AF7F /* MapViewController+ViewModel.swift in Sources */,
 				938E1FB928338EF4007EAB79 /* VirtualTourist.xcdatamodeld in Sources */,
 				938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */,

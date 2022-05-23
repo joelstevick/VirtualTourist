@@ -101,6 +101,7 @@ class SelectableCardsView: UIView {
                 let card = delegate.getCardAtIndex(at: i)
                 
                 scrollView.addSubview(containerView)
+                
                 // setup the image view
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
@@ -112,6 +113,12 @@ class SelectableCardsView: UIView {
                 imageView.layer.masksToBounds = true
                 
                 containerView.addSubview(imageView)
+                
+                // setup a gesture recognizer for long press
+                imageView.isUserInteractionEnabled = true
+                let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(gestureFired))
+                
+                imageView.addGestureRecognizer(longPressRecognizer)
             }
             
             scrollView.contentSize = containerView.frame.size
