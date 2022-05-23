@@ -25,8 +25,8 @@ extension SelectableCardsView {
             label.textColor = .white
             label.backgroundColor = .systemGray
             label.font = label.font.withSize(40)
-            label.frame.origin = CGPoint(x: (Int(frame.width) - labelWidth)/2, y: 5)
-            label.frame.size = CGSize(width: labelWidth, height: 400
+            label.frame.origin = CGPoint(x: (Int(frame.width) - labelWidth)/2, y: 0)
+            label.frame.size = CGSize(width: labelWidth, height: 40)
             
             imageView.addSubview(label)
             
