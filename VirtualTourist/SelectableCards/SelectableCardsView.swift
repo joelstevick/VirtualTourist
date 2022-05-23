@@ -32,6 +32,7 @@ class SelectableCardsView: UIView {
     var selectionState = [Int: Bool]()
     var imageViews = [Int: UIImageView]()
     var currentVisualCue = [Int: UIView]()
+    var cards = [Int: SelectableCard]()
     
     var configured = false
     
