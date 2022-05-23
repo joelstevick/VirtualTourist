@@ -76,8 +76,11 @@ extension SelectableCardsView {
                 imageView.frame.origin.y = 0.0
                 imageView.contentMode = UIView.ContentMode.scaleAspectFill
                 imageView.layer.masksToBounds = true
+                imageViews[i] = imageView
                 
                 containerView.addSubview(imageView)
+                
+                applyVisualCue(cardIndex: i, visualCue: .Default)
                 
                 // setup a gesture recognizer for long press
                 imageView.isUserInteractionEnabled = true

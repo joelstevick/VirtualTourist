@@ -37,6 +37,7 @@
 		93F08662283B861F00E3429F /* SelectableCardsView+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */; };
 		93F08664283B898200E3429F /* SelectableCardsView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */; };
 		93F08666283B8C8A00E3429F /* SelectableCardsView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08665283B8C8A00E3429F /* SelectableCardsView+Configure.swift */; };
+		93F08668283B97FD00E3429F /* SelectableCardsView+VisualCues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+ScrollView.swift"; sourceTree = "<group>"; };
 		93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Gestures.swift"; sourceTree = "<group>"; };
 		93F08665283B8C8A00E3429F /* SelectableCardsView+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Configure.swift"; sourceTree = "<group>"; };
+		93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+VisualCues.swift"; sourceTree = "<group>"; };
 		93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */,
 				93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */,
 				93F08665283B8C8A00E3429F /* SelectableCardsView+Configure.swift */,
+				93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */,
 			);
 			path = SelectableCards;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */,
 				9332301A28390E370017AF7F /* MapViewController+Gestures.swift in Sources */,
 				93323017283909520017AF7F /* DataController.swift in Sources */,
+				93F08668283B97FD00E3429F /* SelectableCardsView+VisualCues.swift in Sources */,
 				93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */,
 				93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */,
 				9332302A2839967B0017AF7F /* MapViewController+CoreData+Notifications.swift in Sources */,

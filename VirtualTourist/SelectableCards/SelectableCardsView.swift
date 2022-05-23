@@ -30,6 +30,7 @@ class SelectableCardsView: UIView {
     var numberOfCards: Int!
     
     var selectionState = [Int: Bool]()
+    var imageViews = [Int: UIImageView]()
     
     var configured = false
     
