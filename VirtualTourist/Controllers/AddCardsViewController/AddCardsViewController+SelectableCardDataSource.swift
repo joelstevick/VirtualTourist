@@ -20,11 +20,11 @@ extension AddCardsViewController: SelectableCardsDataSource {
     
     
     func getNumberOfCards() -> Int {
-        StateService.shared.availableCards.count
+        StateService.shared.getAvailableCards().count
     }
     
     func getCardAtIndex(at index: Int) -> SelectableCard {
-        return StateService.shared.availableCards[index]
+        return StateService.shared.getAvailableCards()[index]
     }
     
     func canRemoveCards() -> Bool {

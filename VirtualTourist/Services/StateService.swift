@@ -17,9 +17,7 @@ class StateService {
     private init() {
         
     }
-    var allCards = [SelectableCard]()
-    var selectedCards = [SelectableCard]()
-    var availableCards = [SelectableCard]()
+    var cards = [SelectableCard]()
     var photoImages = [UIImage]()
     
     func load(coordinate: CLLocationCoordinate2D, viewController: UIViewController, completion: (() -> Void)?) async {
@@ -50,11 +48,9 @@ class StateService {
                             if let photoImage = photoImage {
                                 self.photoImages.append(photoImage)
                                 
-                                self.allCards = self.photoImages.map({ uiImage in
+                                self.cards = self.photoImages.map({ uiImage in
                                     return SelectableCard(id: NanoID.generate(), uiImage: uiImage, selected: false)
                                 })
-                                
-                                self.availableCards = self.allCards
                                 
                                 // If all images loaded, we are done
                                 if self.photoImages.count == photoUrls.count {
@@ -70,6 +66,17 @@ class StateService {
                 }
             }
         }
-        
+    }
+    
+    func getSelectedCards() -> [SelectableCard] {
+        return cards.filter { card in
+            return card.selected
+        }
+    }
+    
+    func getAvailableCards() -> [SelectableCard] {
+        return cards.filter { card in
+            return card.selected == nil || !card.selected
+        }
     }
 }
