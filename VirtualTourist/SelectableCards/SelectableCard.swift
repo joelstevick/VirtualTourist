@@ -9,5 +9,6 @@ import Foundation
 import UIKit
 
 struct SelectableCard {
+    let id: String
     let uiImage: UIImage
 }

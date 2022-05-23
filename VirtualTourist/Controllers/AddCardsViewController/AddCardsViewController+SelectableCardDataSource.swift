@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import NanoID
 
 extension AddCardsViewController: SelectableCardsDataSource {
     func cardSelectionChanged(at index: Int, selected: Bool) {
@@ -18,7 +19,7 @@ extension AddCardsViewController: SelectableCardsDataSource {
     }
     
     func getCardAtIndex(at index: Int) -> SelectableCard {
-        return SelectableCard(uiImage: photoImages[index])
+        return SelectableCard(id: NanoID.generate(), uiImage: photoImages[index])
     }
     
     func canRemoveCards() -> Bool {
