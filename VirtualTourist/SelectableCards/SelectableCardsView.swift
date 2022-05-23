@@ -36,13 +36,6 @@ class SelectableCardsView: UIView {
     
     override func draw(_ rect: CGRect) {
       
-        // create the scrollView
-        let scrollView = UIScrollView(frame: rect)
-        scrollView.autoresizingMask = [.flexibleWidth]
-        scrollView.backgroundColor = .white
-        scrollView.isPagingEnabled = true
-        addSubview(scrollView)
-
         // query the delegate for the number of pictures
         if let delegate = delegate {
             let numberOfCards = delegate.getNumberOfCards()
@@ -52,6 +45,27 @@ class SelectableCardsView: UIView {
                 return
             }
             let imageWidth = rect.width
+            
+            // create the scrollView
+            let scrollView = UIScrollView(frame: rect)
+            scrollView.autoresizingMask = [.flexibleWidth]
+            scrollView.backgroundColor = .white
+            scrollView.isPagingEnabled = true
+            addSubview(scrollView)
+            
+            // add a paginator
+            let pageControl: UIPageControl = {
+                let pageControl = UIPageControl()
+                pageControl.numberOfPages = numberOfCards
+                pageControl.frame = CGRect(
+                    x: 10,
+                    y: rect.size.height - 100,
+                    width: rect.size.width - 20,
+                    height: 70)
+                pageControl.backgroundColor = .systemBlue
+                return pageControl
+            }()
+            addSubview(pageControl)
             
             // create a containerView
             let containerView = UIView()
