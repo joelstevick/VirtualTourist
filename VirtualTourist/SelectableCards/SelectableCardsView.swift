@@ -45,7 +45,7 @@ class SelectableCardsView: UIView {
     }
     override func draw(_ rect: CGRect) {
         if (!configured) {
-            configure()
+            reload()
         }
     }
 }

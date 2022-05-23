@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension SelectableCardsView {
-    func configure() {
+    func reload() {
       
         configured = true
         
