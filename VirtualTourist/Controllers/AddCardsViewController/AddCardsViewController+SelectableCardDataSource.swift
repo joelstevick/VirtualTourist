@@ -15,7 +15,10 @@ extension AddCardsViewController: SelectableCardsDataSource {
     }
     
     func cardSelectionChanged(card: SelectableCard, selected: Bool) {
-        print("card selection state changed", card, selected)
+        var updatedCard = card
+        updatedCard.selected = selected
+        StateService.shared.updateCard(card)
+        print("card selection state changed", updatedCard)
     }
     
     

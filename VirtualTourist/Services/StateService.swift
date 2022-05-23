@@ -79,4 +79,19 @@ class StateService {
             return !card.selected
         }
     }
+    
+    func updateCard(_ card: SelectableCard) {
+        
+        self.cards = self.cards.map({ _card in
+            if _card.id == card.id {
+                return card
+            } else {
+                return _card
+            }
+        })
+        publishChanges()
+    }
+    func publishChanges() {
+        NotificationCenter.default.post(name: Notification.Name("*"), object: nil)
+    }
 }

@@ -38,16 +38,16 @@ class DetailViewController: UIViewController {
             })
         }
     
+        // listen for changes
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: Notification.Name("*"), object: nil)
     }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // If this is an ImagePickerViewConroller, we'll configure its `photoUrls`
-//        if let vc = segue.destination as? AddCardsViewController {
-//           
-//        }
     }
     
     // MARK: - Utility functions
-    
+    @objc func refresh() {
+        selectableCardView.reload()
+    }
 }

@@ -110,6 +110,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="C9c-Bw-A1d" id="EnD-4J-Hh8"/>
+                        <outlet property="selectableCardView" destination="wef-Y8-8FT" id="Vjr-gx-jxh"/>
                         <segue destination="FMe-KA-YNq" kind="show" identifier="AddPicture" id="4ki-Q5-Luj"/>
                     </connections>
                 </viewController>
