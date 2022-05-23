@@ -54,14 +54,16 @@ class SelectableCardsView: UIView {
             addSubview(scrollView)
             
             // add a paginator
+            let paginatorHeight = 70.0
+            
             let pageControl: UIPageControl = {
                 let pageControl = UIPageControl()
                 pageControl.numberOfPages = numberOfCards
                 pageControl.frame = CGRect(
-                    x: 10,
-                    y: rect.size.height - 100,
-                    width: rect.size.width - 20,
-                    height: 70)
+                    x: 0,
+                    y: rect.size.height - paginatorHeight,
+                    width: rect.size.width,
+                    height: paginatorHeight)
                 pageControl.backgroundColor = .systemBlue
                 return pageControl
             }()
