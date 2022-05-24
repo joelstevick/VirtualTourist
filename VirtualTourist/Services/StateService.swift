@@ -27,7 +27,15 @@ class StateService {
         // get the photo URLs
         let photoUrls = await search(coordinate: coordinate, viewController: viewController)
         
-        
+        guard photoUrls.count > 0 else {
+            // call completion handler
+            if let completion = completion {
+                completion()
+                
+                showError(viewController: viewController, message: "No pictures for this location")
+            }
+            return
+        }
         // download the images in parallel
         let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
         
