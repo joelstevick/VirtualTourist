@@ -96,6 +96,7 @@
 		933230152839093E0017AF7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
 				938E1FB728338EF4007EAB79 /* VirtualTourist.xcdatamodeld */,
 				93323016283909520017AF7F /* DataController.swift */,
 			);
@@ -152,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				93F08669283BAC1200E3429F /* Services */,
-				93F08654283A9D7900E3429F /* SelectableCards */,
+				93F08654283A9D7900E3429F /* SelectableCardsView */,
 				933230152839093E0017AF7F /* Model */,
 				93656E05283654300003B17A /* Util */,
 				93D57EF62834EAD1002CD6EF /* Networking */,
@@ -195,17 +196,16 @@
 			path = Flickr;
 			sourceTree = "<group>";
 		};
-		93F08654283A9D7900E3429F /* SelectableCards */ = {
+		93F08654283A9D7900E3429F /* SelectableCardsView */ = {
 			isa = PBXGroup;
 			children = (
 				93F08659283AA0DC00E3429F /* SelectableCardsView.swift */,
-				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
 				93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */,
 				93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */,
 				93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */,
 				93F08667283B97FD00E3429F /* SelectableCardsView+VisualCues.swift */,
 			);
-			path = SelectableCards;
+			path = SelectableCardsView;
 			sourceTree = "<group>";
 		};
 		93F08669283BAC1200E3429F /* Services */ = {
