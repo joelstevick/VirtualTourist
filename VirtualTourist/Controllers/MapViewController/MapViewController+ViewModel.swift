@@ -15,8 +15,6 @@ extension MapViewController {
     private func addAnnotationToMapView(
         title: String,
         subTitle: String,
-        latitude: Double,
-        longitude: Double,
         location: Location
     ) {
             let annotation = AnnotationWithLocation()
@@ -52,8 +50,6 @@ extension MapViewController {
             addAnnotationToMapView(
                 title: location.title!,
                 subTitle: location.subtitle!,
-                latitude: location.latitude,
-                longitude: location.longitude,
                 location: location)
         }
         
