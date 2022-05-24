@@ -9,6 +9,7 @@ import Foundation
 import CoreLocation
 import UIKit
 import NanoID
+import CoreData
 
 enum Constants: String {
     case cardImages = "card-images"
@@ -28,6 +29,9 @@ class StateService {
     func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
         // reset
         photoImages.removeAll()
+        
+        // try to load from db
+        loadLocation(location: location, dataController: dataController)
         
         // get the photo URLs
         let photoUrls = await search(
@@ -141,6 +145,20 @@ class StateService {
         }
     }
     
+    func loadLocation(location: Location, dataController: DataController) -> Bool {
+        let fetchRequest:NSFetchRequest<Location> = Location.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "id = %@", location.id!
+        )
+        do {
+            let locationRecord = try dataController.viewContext.fetch(fetchRequest)
+            
+            print(locationRecord.count)
+            return true
+        } catch {
+            return false
+        }
+    }
     func getSelectedCards() -> [SelectableCard] {
         return cards.filter { card in
             return card.selected
