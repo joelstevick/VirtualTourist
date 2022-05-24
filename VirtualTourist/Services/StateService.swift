@@ -10,6 +10,11 @@ import CoreLocation
 import UIKit
 import NanoID
 
+enum Constants: String {
+    case cardImages = "card-images"
+    case cardPrefix = "card"
+}
+
 class StateService {
     
     static public let shared = StateService()
@@ -98,10 +103,35 @@ class StateService {
         dataController: DataController
     ) {
         
+        // add to the location record
         cards.forEach { card in
             location.cards?.adding(card)
         }
         
+        // persist each image to the filesystem
+        for card in cards {
+            let manager = FileManager.default
+            
+            guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                return
+            }
+            
+            // create the card-images folder
+            let folderUrl = url.appendingPathComponent(Constants.cardImages.rawValue)
+            
+            do {
+                try manager.createDirectory(at: folderUrl, withIntermediateDirectories: true)
+            } catch {
+                showError(viewController: viewController, message: error.localizedDescription)
+            }
+            
+            // save to the file
+            let fileUrl = folderUrl.appendingPathComponent("\(Constants.cardPrefix.rawValue)-\(card.id)")
+            
+            manager.createFile(atPath: fileUrl.path, contents: card.uiImage.jpegData(compressionQuality: 1.0))
+            
+        }
+        // save into the db
         Task {
             do {
                 try dataController.viewContext.save()
