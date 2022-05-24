@@ -91,7 +91,7 @@ extension SelectableCardsView {
                 
                 // setup a gesture recognizer for long press
                 imageView.isUserInteractionEnabled = true
-                let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(gestureFired))
+                let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longpressGestureFired))
                 
                 imageView.addGestureRecognizer(longPressRecognizer)
             }
