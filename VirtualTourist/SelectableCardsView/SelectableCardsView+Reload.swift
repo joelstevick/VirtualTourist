@@ -94,6 +94,12 @@ extension SelectableCardsView {
                 let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longpressGestureFired))
                 
                 imageView.addGestureRecognizer(longPressRecognizer)
+                
+                // setup a gesture recognizer for swipe
+                imageView.isUserInteractionEnabled = true
+                let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureFired))
+                
+                imageView.addGestureRecognizer(swipeRecognizer)
             }
             
             scrollView.contentSize = containerView.frame.size
