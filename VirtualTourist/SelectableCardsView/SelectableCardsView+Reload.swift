@@ -31,7 +31,7 @@ extension SelectableCardsView {
             imageWidth = rect.width
             
             // create the scrollView
-            scrollView = UIScrollView(frame: rect)
+            scrollView = GesturesScrollView(frame: rect)
             scrollView.autoresizingMask = [.flexibleWidth]
             scrollView.backgroundColor = .white
             scrollView.isPagingEnabled = true
@@ -89,16 +89,16 @@ extension SelectableCardsView {
                 
                 applyVisualCue(cardIndex: i, visualCue: .Default)
                 
-                // setup a gesture recognizer for long press
                 imageView.isUserInteractionEnabled = true
+                // setup a gesture recognizer for long press
                 let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longpressGestureFired))
                 
                 imageView.addGestureRecognizer(longPressRecognizer)
                 
                 // setup a gesture recognizer for swipe
-                imageView.isUserInteractionEnabled = true
                 let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureFired))
-                
+                swipeRecognizer.direction = .up
+                swipeRecognizer.numberOfTouchesRequired = 1
                 imageView.addGestureRecognizer(swipeRecognizer)
             }
             
