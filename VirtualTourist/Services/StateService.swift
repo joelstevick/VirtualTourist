@@ -20,14 +20,14 @@ class StateService {
     var cards = [SelectableCard]()
     var photoImages = [UIImage]()
     
-    func load(location: Location, viewController: UIViewController, completion: (() -> Void)?) async {
+    func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
         // reset
         photoImages.removeAll()
         
         // get the photo URLs
         let photoUrls = await search(
             coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-                                        , viewController: viewController)
+            , viewController: viewController)
         
         guard photoUrls.count > 0 else {
             // call completion handler
@@ -66,16 +66,47 @@ class StateService {
                                 
                                 // If all images loaded, we are done
                                 if self.photoImages.count == photoUrls.count {
-                                    // call completion handler
-                                    if let completion = completion {
-                                        completion()
+                                    
+                                    Task {
+                                        // persist the cards for the location
+                                        self.saveCards(
+                                            location: location,
+                                            cards: self.cards,
+                                            viewController: viewController,
+                                            dataController: dataController
+                                        )
+                                        // call completion handler
+                                        if let completion = completion {
+                                            completion()
+                                        }
                                     }
+                                    
                                 }
                             }
                             
                         }
                     }
                 }
+            }
+        }
+    }
+    
+    func saveCards(
+        location: Location,
+        cards: [SelectableCard],
+        viewController: UIViewController,
+        dataController: DataController
+    ) {
+        
+        cards.forEach { card in
+            location.cards?.adding(card)
+        }
+        
+        Task {
+            do {
+                try dataController.viewContext.save()
+            } catch {
+                showError(viewController: viewController, message: error.localizedDescription)
             }
         }
     }

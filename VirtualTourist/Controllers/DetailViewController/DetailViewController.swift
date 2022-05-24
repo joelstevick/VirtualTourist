@@ -11,7 +11,8 @@ import CoreLocation
 class DetailViewController: UIViewController {
     // MARK: - Properties
     var location: Location!
-    
+    var dataController: DataController!
+        
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var selectableCardView: SelectableCardsView!
@@ -29,7 +30,7 @@ class DetailViewController: UIViewController {
         selectableCardView.delegate = self
         
         Task {
-            await StateService.shared.load(location: self.location, viewController: self, completion:  {
+            await StateService.shared.load(location: self.location, dataController: dataController, viewController: self, completion:  {
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }
