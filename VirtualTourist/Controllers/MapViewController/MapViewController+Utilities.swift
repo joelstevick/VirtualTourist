@@ -12,7 +12,7 @@ extension MapViewController {
     func navigateToMapDetailView(view: MKAnnotationView) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        detailViewController.coordinate = view.annotation?.coordinate
+        detailViewController.location = (view.annotation as! AnnotationWithLocation).location
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

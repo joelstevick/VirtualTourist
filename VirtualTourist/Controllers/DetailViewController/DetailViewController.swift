@@ -10,7 +10,7 @@ import CoreLocation
 
 class DetailViewController: UIViewController {
     // MARK: - Properties
-    var coordinate: CLLocationCoordinate2D!
+    var location: Location!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
         selectableCardView.delegate = self
         
         Task {
-            await StateService.shared.load(coordinate: coordinate, viewController: self, completion:  {
+            await StateService.shared.load(location: self.location, viewController: self, completion:  {
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }

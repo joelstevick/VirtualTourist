@@ -20,12 +20,14 @@ class StateService {
     var cards = [SelectableCard]()
     var photoImages = [UIImage]()
     
-    func load(coordinate: CLLocationCoordinate2D, viewController: UIViewController, completion: (() -> Void)?) async {
+    func load(location: Location, viewController: UIViewController, completion: (() -> Void)?) async {
         // reset
         photoImages.removeAll()
         
         // get the photo URLs
-        let photoUrls = await search(coordinate: coordinate, viewController: viewController)
+        let photoUrls = await search(
+            coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+                                        , viewController: viewController)
         
         guard photoUrls.count > 0 else {
             // call completion handler
