@@ -26,6 +26,10 @@ extension DetailViewController: SelectableCardsDataSource {
         return true
     }
     
+    func isSelectable() -> Bool {
+        return false
+    }
+    
     func cardSelectionChanged(card: SelectableCard, selected: Bool) {
     }
     

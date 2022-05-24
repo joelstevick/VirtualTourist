@@ -20,8 +20,6 @@ class DetailViewController: UIViewController {
     // MARK: - Actions
     @IBAction func addPressed(_ sender: Any) {
         // perform the segue
-        self.activityIndicator.stopAnimating()
-        
         self.performSegue(withIdentifier: "AddPicture", sender: self)
     }
     // MARK: - Lifecyle methods

@@ -80,14 +80,16 @@ extension SelectableCardsView {
                 
                 scrollView.addSubview(imageView)
                 
-                applyVisualCue(cardIndex: i, visualCue: .Default)
-                
                 imageView.isUserInteractionEnabled = true
-                // setup a gesture recognizer for long press
-                let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longpressGestureFired))
-                
-                imageView.addGestureRecognizer(longPressRecognizer)
-                
+                if delegate.isSelectable() {
+                    // default visual que
+                    applyVisualCue(cardIndex: i, visualCue: .Default)
+                    
+                    // setup a gesture recognizer for long press
+                    let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longpressGestureFired))
+                    
+                    imageView.addGestureRecognizer(longPressRecognizer)
+                }
                 // setup a gesture recognizer for swipe
                 let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeGestureFired))
                 swipeRecognizer.direction = .up

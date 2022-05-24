@@ -11,12 +11,16 @@ protocol SelectableCardsDataSource {
     func getNumberOfCards() -> Int
     func getCardAtIndex(at index: Int) -> SelectableCard
     func canRemoveCards() -> Bool
+    func isSelectable() -> Bool
     func cardRemoved(card: SelectableCard) -> Void
     func cardSelectionChanged(card: SelectableCard, selected: Bool) -> Void
 }
 
 extension SelectableCardsDataSource {
     func cardRemoved(card: SelectableCard) {}
+    func isSelectable() -> Bool {
+        return true
+    }
 }
 class SelectableCardsView: UIView {
     
