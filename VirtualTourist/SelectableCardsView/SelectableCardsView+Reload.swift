@@ -21,8 +21,9 @@ extension SelectableCardsView {
             
             guard numberOfCards > 0 else {
                 
-                let noPicturesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+                let noPicturesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: rect.width, height: 200))
                 noPicturesLabel.text = "No Pictures"
+                noPicturesLabel.textAlignment = .center
                 noPicturesLabel.textColor = .gray
     
                 addSubview(noPicturesLabel)
