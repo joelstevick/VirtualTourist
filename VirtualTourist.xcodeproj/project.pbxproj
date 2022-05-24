@@ -29,6 +29,10 @@
 		938E1FBB28338EF9007EAB79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 938E1FBA28338EF9007EAB79 /* Assets.xcassets */; };
 		938E1FBE28338EF9007EAB79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 938E1FBC28338EF9007EAB79 /* LaunchScreen.storyboard */; };
 		93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B02ED028339B0600B10A0E /* MapViewController.swift */; };
+		93BB70A2283D92FB001AF087 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB709E283D92FB001AF087 /* Card+CoreDataClass.swift */; };
+		93BB70A3283D92FB001AF087 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB709F283D92FB001AF087 /* Card+CoreDataProperties.swift */; };
+		93BB70A4283D92FB001AF087 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB70A0283D92FB001AF087 /* Location+CoreDataClass.swift */; };
+		93BB70A5283D92FB001AF087 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB70A1283D92FB001AF087 /* Location+CoreDataProperties.swift */; };
 		93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF42834E5D0002CD6EF /* DetailViewController.swift */; };
 		93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF82834EB15002CD6EF /* FlickrConfig.swift */; };
 		93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFA2834ECBD002CD6EF /* Search.swift */; };
@@ -70,6 +74,10 @@
 		938E1FBD28338EF9007EAB79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		938E1FBF28338EF9007EAB79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93B02ED028339B0600B10A0E /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		93BB709E283D92FB001AF087 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93BB709F283D92FB001AF087 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		93BB70A0283D92FB001AF087 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		93BB70A1283D92FB001AF087 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		93D57EF42834E5D0002CD6EF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		93D57EF82834EB15002CD6EF /* FlickrConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrConfig.swift; sourceTree = "<group>"; };
 		93D57EFA2834ECBD002CD6EF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 		938E1FAD28338EF4007EAB79 /* VirtualTourist */ = {
 			isa = PBXGroup;
 			children = (
+				93BB70A6283D934F001AF087 /* Entities */,
 				93855CA3283D158300B257EB /* Classes */,
 				93F08669283BAC1200E3429F /* Services */,
 				93F08654283A9D7900E3429F /* SelectableCardsView */,
@@ -180,6 +189,33 @@
 				938E1FBF28338EF9007EAB79 /* Info.plist */,
 			);
 			path = VirtualTourist;
+			sourceTree = "<group>";
+		};
+		93BB70A6283D934F001AF087 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				93BB70A8283D9367001AF087 /* Card */,
+				93BB70A7283D935B001AF087 /* Location */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		93BB70A7283D935B001AF087 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				93BB70A0283D92FB001AF087 /* Location+CoreDataClass.swift */,
+				93BB70A1283D92FB001AF087 /* Location+CoreDataProperties.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		93BB70A8283D9367001AF087 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				93BB709E283D92FB001AF087 /* Card+CoreDataClass.swift */,
+				93BB709F283D92FB001AF087 /* Card+CoreDataProperties.swift */,
+			);
+			path = Card;
 			sourceTree = "<group>";
 		};
 		93D57EF32834E577002CD6EF /* Views */ = {
@@ -357,11 +393,15 @@
 				93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */,
 				93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */,
 				9332301A28390E370017AF7F /* MapViewController+Gestures.swift in Sources */,
+				93BB70A2283D92FB001AF087 /* Card+CoreDataClass.swift in Sources */,
 				93323017283909520017AF7F /* DataController.swift in Sources */,
 				93F08668283B97FD00E3429F /* SelectableCardsView+VisualCues.swift in Sources */,
+				93BB70A3283D92FB001AF087 /* Card+CoreDataProperties.swift in Sources */,
+				93BB70A4283D92FB001AF087 /* Location+CoreDataClass.swift in Sources */,
 				93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */,
 				93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */,
 				9332302A2839967B0017AF7F /* MapViewController+CoreData+Notifications.swift in Sources */,
+				93BB70A5283D92FB001AF087 /* Location+CoreDataProperties.swift in Sources */,
 				93B02ED128339B0600B10A0E /* MapViewController.swift in Sources */,
 				93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */,
 				93F0866B283BAC2100E3429F /* StateService.swift in Sources */,
