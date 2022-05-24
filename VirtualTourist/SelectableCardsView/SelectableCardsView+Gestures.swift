@@ -63,8 +63,7 @@ extension SelectableCardsView: UIGestureRecognizerDelegate {
 
             // notify the delegate
             let isSelected = selectionState[pageControl.currentPage] == true
-            delegate.cardSelectionChanged(card: cards[pageControl.currentPage]!,
-                                          selected: isSelected)
+            delegate.cardRemoved(card: cards[pageControl.currentPage]!)
             
         }
     }
