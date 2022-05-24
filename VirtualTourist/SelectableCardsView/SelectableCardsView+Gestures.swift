@@ -51,7 +51,9 @@ extension SelectableCardsView: UIGestureRecognizerDelegate {
         if let gestureView = gestureRecognizer.view {
             
             // apply visual cue
-            gestureView.animate(animations: [AnimationType.from(direction: .top, offset: 300)])
+            UIView.animate(withDuration: 0.5, delay: 0.0) {
+                gestureView.center = CGPoint(x: gestureView.center.x, y: -1 * gestureView.frame.height)
+            }
             
             // notify the delegate
             let isSelected = selectionState[pageControl.currentPage] == true
