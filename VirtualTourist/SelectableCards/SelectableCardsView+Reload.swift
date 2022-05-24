@@ -10,7 +10,7 @@ import UIKit
 
 extension SelectableCardsView {
     func reload() {
-      
+        
         configured = true
         
         let rect = CGRect(origin:frame.origin, size:frame.size)
@@ -20,9 +20,11 @@ extension SelectableCardsView {
             numberOfCards = delegate.getNumberOfCards()
             
             guard numberOfCards > 0 else {
-                let noPicturesLabel = UILabel()
-                noPicturesLabel.text = "No pictures"
-                noPicturesLabel.frame = rect
+                
+                let noPicturesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+                noPicturesLabel.text = "No Pictures"
+                noPicturesLabel.textColor = .gray
+    
                 addSubview(noPicturesLabel)
                 return
             }
@@ -95,7 +97,7 @@ extension SelectableCardsView {
             }
             
             scrollView.contentSize = containerView.frame.size
-    
+            
             print(scrollView.contentSize)
         }
     }
