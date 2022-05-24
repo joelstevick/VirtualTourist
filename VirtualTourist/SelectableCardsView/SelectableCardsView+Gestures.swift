@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ViewAnimator
 
 extension SelectableCardsView: UIGestureRecognizerDelegate {
     // gesture recognizer
@@ -50,12 +51,12 @@ extension SelectableCardsView: UIGestureRecognizerDelegate {
         if let gestureView = gestureRecognizer.view {
             
             // apply visual cue
-            applyVisualCue(cardIndex: pageControl.currentPage,
-                           visualCue: selectionState[pageControl.currentPage]! ? CardVisualCue.Selected : CardVisualCue.Default)
+            gestureView.animate(animations: [AnimationType.from(direction: .top, offset: 300)])
             
             // notify the delegate
+            let isSelected = selectionState[pageControl.currentPage] == true
             delegate.cardSelectionChanged(card: cards[pageControl.currentPage]!,
-                                          selected: selectionState[pageControl.currentPage]!)
+                                          selected: isSelected)
             
         }
     }
