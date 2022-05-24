@@ -59,21 +59,13 @@ extension SelectableCardsView {
             // wire-up the page control to the scrollView
             pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .valueChanged)
             
-            // create a containerView
-            let containerView = UIView()
-            containerView.frame.size = CGSize(width: imageWidth * Double(numberOfCards), height: frame.height - paginatorHeight)
-            
-            scrollView.addSubview(containerView)
-            
             // get each of the cards
             for i in 0..<numberOfCards {
                 // get the card
                 let card = delegate.getCardAtIndex(at: i)
                 
                 cards[i] = card
-                
-                scrollView.addSubview(containerView)
-                
+           
                 // setup the image view
                 let imageView = UIImageView()
                 imageView.image = card.uiImage
@@ -85,7 +77,7 @@ extension SelectableCardsView {
                 imageView.layer.masksToBounds = true
                 imageViews[i] = imageView
                 
-                containerView.addSubview(imageView)
+                scrollView.addSubview(imageView)
                 
                 applyVisualCue(cardIndex: i, visualCue: .Default)
                 
@@ -102,7 +94,7 @@ extension SelectableCardsView {
                 imageView.addGestureRecognizer(swipeRecognizer)
             }
             
-            scrollView.contentSize = containerView.frame.size
+            scrollView.contentSize = CGSize(width: imageWidth * Double(numberOfCards), height: frame.height - paginatorHeight)
             
             print(scrollView.contentSize)
         }
