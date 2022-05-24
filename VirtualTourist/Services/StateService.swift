@@ -109,7 +109,9 @@ class StateService {
         
         // add to the location record
         cards.forEach { card in
-            location.cards?.adding(card)
+            let cardEntity = Card(context: dataController.viewContext)
+            
+            location.cards = location.cards!.adding(cardEntity) as NSSet
         }
         
         // persist each image to the filesystem
@@ -153,7 +155,7 @@ class StateService {
         do {
             let locationRecord = try dataController.viewContext.fetch(fetchRequest)
             
-            print(locationRecord.count)
+            print(locationRecord[0].cards?.count)
             return true
         } catch {
             return false
