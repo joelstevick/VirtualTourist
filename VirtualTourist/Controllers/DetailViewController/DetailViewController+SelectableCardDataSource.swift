@@ -9,7 +9,9 @@ import Foundation
 
 extension DetailViewController: SelectableCardsDataSource {
     func cardRemoved(card: SelectableCard) {
-        
+        var updatedCard = card
+        updatedCard.selected = false
+        StateService.shared.updateCard(updatedCard)
     }
     
     func getNumberOfCards() -> Int {
