@@ -20,7 +20,10 @@ extension SelectableCardsView {
             numberOfCards = delegate.getNumberOfCards()
             
             guard numberOfCards > 0 else {
-                noPicturesLabel.isHidden = true
+                let noPicturesLabel = UILabel()
+                noPicturesLabel.text = "No pictures"
+                noPicturesLabel.frame = rect
+                addSubview(noPicturesLabel)
                 return
             }
             imageWidth = rect.width

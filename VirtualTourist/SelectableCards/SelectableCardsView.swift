@@ -21,7 +21,7 @@ extension SelectableCardsDataSource {
 class SelectableCardsView: UIView {
     
     // MARK: - Properties
-    @IBOutlet weak var noPicturesLabel: UILabel!
+    var noPicturesLabel: UILabel?
     
     var delegate: SelectableCardsDataSource?
     var imageWidth: Double!

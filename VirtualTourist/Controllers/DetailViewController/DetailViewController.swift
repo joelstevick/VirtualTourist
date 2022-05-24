@@ -28,6 +28,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.activityIndicator.startAnimating()
+        selectableCardView.delegate = self
         
         Task {
             await StateService.shared.load(coordinate: coordinate, viewController: self, completion:  {
