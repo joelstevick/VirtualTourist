@@ -41,6 +41,7 @@
 		93F0866B283BAC2100E3429F /* StateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866A283BAC2100E3429F /* StateService.swift */; };
 		93F0866E283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866D283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift */; };
 		93F08670283CCC3900E3429F /* GesturesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0866F283CCC3900E3429F /* GesturesScrollView.swift */; };
+		93F08673283CD1C100E3429F /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = 93F08672283CD1C100E3429F /* ViewAnimator */; };
 		93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F6FB5D283396B9006C55D3 /* MapNavigationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F08673283CD1C100E3429F /* ViewAnimator in Frameworks */,
 				93323026283925BC0017AF7F /* NanoID in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +261,7 @@
 			name = VirtualTourist;
 			packageProductDependencies = (
 				93323025283925BC0017AF7F /* NanoID */,
+				93F08672283CD1C100E3429F /* ViewAnimator */,
 			);
 			productName = VirtualTourist;
 			productReference = 938E1FAB28338EF4007EAB79 /* VirtualTourist.app */;
@@ -290,6 +293,7 @@
 			mainGroup = 938E1FA228338EF4007EAB79;
 			packageReferences = (
 				93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */,
+				93F08671283CD1C100E3429F /* XCRemoteSwiftPackageReference "ViewAnimator" */,
 			);
 			productRefGroup = 938E1FAC28338EF4007EAB79 /* Products */;
 			projectDirPath = "";
@@ -576,6 +580,14 @@
 				kind = branch;
 			};
 		};
+		93F08671283CD1C100E3429F /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -583,6 +595,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 93323024283925BC0017AF7F /* XCRemoteSwiftPackageReference "NanoID" */;
 			productName = NanoID;
+		};
+		93F08672283CD1C100E3429F /* ViewAnimator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93F08671283CD1C100E3429F /* XCRemoteSwiftPackageReference "ViewAnimator" */;
+			productName = ViewAnimator;
 		};
 /* End XCSwiftPackageProductDependency section */
 
