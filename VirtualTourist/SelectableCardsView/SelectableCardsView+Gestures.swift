@@ -57,8 +57,7 @@ extension SelectableCardsView: UIGestureRecognizerDelegate {
                 guard done else {
                     return
                 }
-                gestureView.removeFromSuperview()
-                
+                gestureView.superview!.removeFromSuperview()
             }
 
             // notify the delegate

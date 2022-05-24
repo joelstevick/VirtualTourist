@@ -95,8 +95,7 @@ extension SelectableCardsView {
             }
             
             scrollView.contentSize = CGSize(width: imageWidth * Double(numberOfCards), height: frame.height - paginatorHeight)
-            
-            print(scrollView.contentSize)
+    
         }
     }
     @objc private func pageControlValueChanged(_ sender: UIPageControl) {
