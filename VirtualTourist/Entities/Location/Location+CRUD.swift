@@ -67,4 +67,20 @@ extension Location {
             fatalError(error.localizedDescription)
         }
     }
+    
+    func get(id: String, context: NSManagedObjectContext, viewController: UIViewController) -> Location? {
+        let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(
+            format: "id == @%", id
+        )
+        
+        do {
+            let locations = try context.fetch(fetchRequest)
+            
+            return locations.first
+        } catch {
+            fatalError("The fetch could not be performed: \(error.localizedDescription)")
+        }
+    }
 }
