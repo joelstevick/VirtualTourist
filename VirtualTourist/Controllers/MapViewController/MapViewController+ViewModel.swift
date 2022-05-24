@@ -16,12 +16,15 @@ extension MapViewController {
         title: String,
         subTitle: String,
         latitude: Double,
-        longitude: Double) {
-            let annotation = MKPointAnnotation()
+        longitude: Double,
+        location: Location
+    ) {
+            let annotation = AnnotationWithLocation()
             
             annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
             annotation.title = title
             annotation.subtitle = subTitle
+            annotation.location = location
             
             self.mapView.addAnnotation(annotation)
             
@@ -50,7 +53,8 @@ extension MapViewController {
                 title: location.title!,
                 subTitle: location.subtitle!,
                 latitude: location.latitude,
-                longitude: location.longitude)
+                longitude: location.longitude,
+                location: location)
         }
         
         // preserve locations so that we can pass to other view controllers

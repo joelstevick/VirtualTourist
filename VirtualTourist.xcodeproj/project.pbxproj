@@ -20,6 +20,7 @@
 		93656E07283654400003B17A /* ShowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E06283654400003B17A /* ShowError.swift */; };
 		93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0828365C1F0003B17A /* GetInfoRespone.swift */; };
 		93656E0B28365E4D0003B17A /* FetchImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93656E0A28365E4D0003B17A /* FetchImage.swift */; };
+		93855CA5283D15AC00B257EB /* AnnotationWithLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93855CA4283D15AC00B257EB /* AnnotationWithLocation.swift */; };
 		938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FAE28338EF4007EAB79 /* AppDelegate.swift */; };
 		938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FB028338EF4007EAB79 /* SceneDelegate.swift */; };
 		938E1FB328338EF4007EAB79 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 938E1FB228338EF4007EAB79 /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		93656E06283654400003B17A /* ShowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowError.swift; sourceTree = "<group>"; };
 		93656E0828365C1F0003B17A /* GetInfoRespone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInfoRespone.swift; sourceTree = "<group>"; };
 		93656E0A28365E4D0003B17A /* FetchImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchImage.swift; sourceTree = "<group>"; };
+		93855CA4283D15AC00B257EB /* AnnotationWithLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationWithLocation.swift; sourceTree = "<group>"; };
 		938E1FAB28338EF4007EAB79 /* VirtualTourist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualTourist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		938E1FAE28338EF4007EAB79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		938E1FB028338EF4007EAB79 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		93855CA3283D158300B257EB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				93855CA4283D15AC00B257EB /* AnnotationWithLocation.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		938E1FA228338EF4007EAB79 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		938E1FAD28338EF4007EAB79 /* VirtualTourist */ = {
 			isa = PBXGroup;
 			children = (
+				93855CA3283D158300B257EB /* Classes */,
 				93F08669283BAC1200E3429F /* Services */,
 				93F08654283A9D7900E3429F /* SelectableCardsView */,
 				933230152839093E0017AF7F /* Model */,
@@ -334,6 +345,7 @@
 				93F0866E283BCC3000E3429F /* DetailViewController+SelectableCardDataSource.swift in Sources */,
 				9332302D2839A4550017AF7F /* AddCardsViewController+SelectableCardDataSource.swift in Sources */,
 				9332301C28390F000017AF7F /* MapViewController+MapViewDelegate.swift in Sources */,
+				93855CA5283D15AC00B257EB /* AnnotationWithLocation.swift in Sources */,
 				93F08662283B861F00E3429F /* SelectableCardsView+ScrollView.swift in Sources */,
 				938E1FAF28338EF4007EAB79 /* AppDelegate.swift in Sources */,
 				93F6FB5E283396B9006C55D3 /* MapNavigationViewController.swift in Sources */,

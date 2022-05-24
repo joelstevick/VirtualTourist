@@ -33,6 +33,8 @@ class StateService {
                 completion()
                 
                 showError(viewController: viewController, message: "No pictures for this location")
+                
+                cards.removeAll()
             }
             return
         }
