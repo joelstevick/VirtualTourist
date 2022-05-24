@@ -21,7 +21,7 @@ extension MapViewController {
     ) {
             let annotation = AnnotationWithLocation()
             
-            annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        annotation.coordinate = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
             annotation.title = title
             annotation.subtitle = subTitle
             annotation.location = location
