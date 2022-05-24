@@ -16,7 +16,7 @@ protocol SelectableCardsDataSource {
 }
 
 extension SelectableCardsDataSource {
-    func cardRemoved(at index: Int) {}
+    func cardRemoved(card: SelectableCard) {}
 }
 class SelectableCardsView: UIView {
     
