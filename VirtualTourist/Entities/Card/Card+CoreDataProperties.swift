@@ -16,9 +16,9 @@ extension Card {
         return NSFetchRequest<Card>(entityName: "Card")
     }
 
-    @NSManaged public var attribute: String?
     @NSManaged public var selected: Bool
     @NSManaged public var location: Location?
+    @NSManaged public var id: String?
 
 }
 

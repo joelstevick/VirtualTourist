@@ -12,22 +12,31 @@ import NanoID
 
 extension StateService {
     func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
+        // reset
+        photoImages.removeAll()
         
+        // try to load locally, then from the cloud if needed
         if !(await loadLocal(location: location, dataController: dataController, viewController: viewController,
-                           completion: completion)) {
+                             completion: completion)) {
             await loadFromCloud(location: location, dataController: dataController, viewController: viewController, completion: completion)
         }
     }
     func loadLocal(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async -> Bool {
         
         // try to load from db
-        return loadLocation(location: location, dataController: dataController)
-    
+        let loaded =  loadLocation(location: location, dataController: dataController, viewController: viewController)
+        
+        if loaded {
+            // call completion handler
+            if let completion = completion {
+                completion()
+            }
+        }
+        
+        return loaded
     }
     func loadFromCloud(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
-        // reset
-        photoImages.removeAll()
-      
+       
         // get the photo URLs
         let photoUrls = await search(
             coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
@@ -94,17 +103,31 @@ extension StateService {
             }
         }
     }
-   
-    func loadLocation(location: Location, dataController: DataController) -> Bool {
+    
+    func loadLocation(location: Location, dataController: DataController, viewController: UIViewController) -> Bool {
         
-        do {
+        // for each card, load the image
+        if let cards = location.cards {
             
-            // for each card, load the image
-            for card in location.cards! {
+            guard cards.count > 0 else {
+                return false
             }
-
-            return false // for now
-        } catch {
+            for card in cards {
+                
+                let fileURL = getFileUrl(cardId: (card as! Card).id!, viewController: viewController)!
+                if let photoImage = UIImage(contentsOfFile: fileURL.path) {
+                    self.photoImages.append(photoImage)
+                    
+                    self.cards = self.photoImages.map({ uiImage in
+                        return SelectableCard(id: NanoID.generate(), uiImage: uiImage, selected: false)
+                    })
+                } else {
+                    return false
+                }
+            }
+            
+            return true
+        } else {
             return false
         }
     }

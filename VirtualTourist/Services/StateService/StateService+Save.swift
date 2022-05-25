@@ -22,6 +22,9 @@ extension StateService {
         cards.forEach { card in
             let cardEntity = Card(context: dataController.viewContext)
             
+            cardEntity.id = card.id
+            cardEntity.location = location
+            cardEntity.selected = card.selected
             location.cards = location.cards!.adding(cardEntity) as NSSet
         }
         
@@ -30,7 +33,7 @@ extension StateService {
             let manager = FileManager.default
             
             // save to the file
-            if let fileUrl = getFileUrl(card: card, viewController: viewController) {
+            if let fileUrl = getFileUrl(cardId: card.id, viewController: viewController) {
                 manager.createFile(atPath: fileUrl.path, contents: card.uiImage.jpegData(compressionQuality: 1.0))
             } else {
                 return
@@ -46,7 +49,7 @@ extension StateService {
         }
     }
     
-    func getFileUrl(card: SelectableCard, viewController: UIViewController) -> URL? {
+    func getFileUrl(cardId: String, viewController: UIViewController) -> URL? {
         let manager = FileManager.default
         
         guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -63,7 +66,7 @@ extension StateService {
         }
         
         // file URL
-        return folderUrl.appendingPathComponent("\(Constants.cardPrefix.rawValue)-\(card.id)")
+        return folderUrl.appendingPathComponent("\(Constants.cardPrefix.rawValue)-\(cardId)")
         
     }
 }
