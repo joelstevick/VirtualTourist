@@ -20,7 +20,8 @@ extension DetailViewController: SelectableCardsDataSource {
     }
     
     func getNumberOfCards() -> Int {
-        StateService.shared.getSelectedCards().count
+        print("getNumberOfCards -> ", StateService.shared.getSelectedCards().count )
+        return StateService.shared.getSelectedCards().count
     }
     
     func getCardAtIndex(at index: Int) -> SelectableCard {

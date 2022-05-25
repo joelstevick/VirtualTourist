@@ -19,18 +19,6 @@ extension SelectableCardsView {
         if let delegate = delegate {
             numberOfCards = delegate.getNumberOfCards()
             
-            guard numberOfCards > 0 else {
-                
-                let noPicturesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: rect.width, height: 200))
-                noPicturesLabel.text = "No Pictures"
-                noPicturesLabel.textAlignment = .center
-                noPicturesLabel.textColor = .gray
-    
-                addSubview(noPicturesLabel)
-                return
-            }
-            imageWidth = rect.width
-            
             // create the scrollView
             scrollView = GesturesScrollView(frame: rect)
             scrollView.autoresizingMask = [.flexibleWidth]
@@ -40,6 +28,19 @@ extension SelectableCardsView {
             
             // wire-up the scrollView to the page control
             scrollView.delegate = self
+            
+            // check for no pictures selected
+            guard numberOfCards > 0 else {
+                
+                let noPicturesLabel = UILabel(frame: CGRect(x: 0, y: 0, width: rect.width, height: 200))
+                noPicturesLabel.text = "No Pictures Selected"
+                noPicturesLabel.textAlignment = .center
+                noPicturesLabel.textColor = .gray
+    
+                addSubview(noPicturesLabel)
+                return
+            }
+            imageWidth = rect.width
             
             // add a paginator
             let paginatorHeight = 70.0

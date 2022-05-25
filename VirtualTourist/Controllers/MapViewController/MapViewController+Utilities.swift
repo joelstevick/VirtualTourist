@@ -13,6 +13,7 @@ extension MapViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailViewController.location = (view.annotation as! AnnotationWithLocation).location
+        print("nav to detailVC with locationId = ",detailViewController.location.id)
         detailViewController.dataController = dataController
         
         self.navigationController?.pushViewController(detailViewController, animated: true)

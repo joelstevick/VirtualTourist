@@ -15,6 +15,7 @@ extension StateService {
         
         // reset
         photoImages.removeAll()
+        cards.removeAll()
         
         // try to load locally, then from the cloud if needed
         if !(await loadLocal(location: location, dataController: dataController, viewController: viewController,
