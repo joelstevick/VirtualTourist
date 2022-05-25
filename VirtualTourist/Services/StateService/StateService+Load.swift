@@ -86,7 +86,7 @@ extension StateService {
                                 card.selected = false
                                 card.location = location
                                 
-                                // If all images loaded, we are done
+                                // If all images downloaded, we are done
                                 if await downloadCounter.count == photoUrls.count {
                                     
                                     Task {
