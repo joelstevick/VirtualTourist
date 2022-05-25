@@ -67,16 +67,15 @@ extension StateService {
                 
                 Task {
                     await downloadCounter.increment()
+                    
                     // download the image
                     let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!,
                                                       viewController: viewController)
                     
                     // need to serialize on the main thread
                     DispatchQueue.main.async {
-                       
-                        
+
                         Task {
-                            
                             
                             // add to the lists
                             if let photoImage = photoImage {
@@ -91,12 +90,19 @@ extension StateService {
                                 if await downloadCounter.count == photoUrls.count {
                                     
                                     Task {
-                                        // persist the cards for the location
-                                        self.saveCards(
+                                        // persist the card images for the location
+                                        self.saveCardsImages(
                                             location: location,
                                             viewController: viewController,
                                             dataController: dataController
                                         )
+                                        
+                                        // save to db
+                                        do {
+                                            try dataController.viewContext.save()
+                                        } catch {
+                                            showError(viewController: viewController, message: error.localizedDescription)
+                                        }
                                         // call completion handler
                                         if let completion = completion {
                                             completion()
@@ -105,7 +111,6 @@ extension StateService {
                                     
                                 }
                             }
-                            
                         }
                     }
                 }

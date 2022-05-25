@@ -11,7 +11,7 @@ import CoreLocation
 import NanoID
 
 extension StateService {
-    func saveCards(
+    func saveCardsImages(
         location: Location,
         viewController: UIViewController,
         dataController: DataController
@@ -26,18 +26,11 @@ extension StateService {
             let card = _card as! Card
             
             // save to the file
-            if let fileUrl = getFileUrl(cardId: card.id!, viewController: viewController) {
-                manager.createFile(atPath: fileUrl.path, contents: card.uiImage!.jpegData(compressionQuality: 1.0))
+            if let fileUrl = getFileUrl(cardId: card.id!, viewController: viewController),
+                let uiImage = card.uiImage {
+                manager.createFile(atPath: fileUrl.path, contents: uiImage.jpegData(compressionQuality: 1.0))
             } else {
                 return
-            }
-        }
-        // save into the db
-        Task {
-            do {
-                try dataController.viewContext.save()
-            } catch {
-                showError(viewController: viewController, message: error.localizedDescription)
             }
         }
     }

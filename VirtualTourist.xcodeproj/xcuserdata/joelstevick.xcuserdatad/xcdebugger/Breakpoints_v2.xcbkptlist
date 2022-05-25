@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DEFE5C56-2A16-4F65-B75A-B8D06215EBD9"
+            uuid = "1251FA59-DF87-447D-AC82-3B1A12C0F077"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VirtualTourist/Services/StateService/StateService+Save.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "saveCards(location:viewController:dataController:)"
+            filePath = "VirtualTourist/Services/StateService/StateService+Load.swift"
+            startingColumnNumber = "46"
+            endingColumnNumber = "46"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "loadFromCloud(location:dataController:viewController:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
