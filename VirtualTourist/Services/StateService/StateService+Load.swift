@@ -24,7 +24,7 @@ extension StateService {
     func loadLocal(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async -> Bool {
         
         // try to load from db
-        let loaded =  loadLocation(location: location, dataController: dataController, viewController: viewController)
+        let loaded = loadLocation(location: location, dataController: dataController, viewController: viewController)
         
         if loaded {
             // call completion handler
@@ -113,13 +113,14 @@ extension StateService {
                 return false
             }
             for card in cards {
-                
                 let fileURL = getFileUrl(cardId: (card as! Card).id!, viewController: viewController)!
                 if let photoImage = UIImage(contentsOfFile: fileURL.path) {
                     self.photoImages.append(photoImage)
                     
                     self.cards = self.photoImages.map({ uiImage in
-                        return SelectableCard(id: NanoID.generate(), uiImage: uiImage, selected: false)
+                        let selectableCard =  SelectableCard(id: NanoID.generate(), uiImage: uiImage, selected: (card as! Card).selected)
+                        
+                        return selectableCard
                     })
                 } else {
                     return false

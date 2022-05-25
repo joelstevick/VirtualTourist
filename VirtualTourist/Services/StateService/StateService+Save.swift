@@ -17,7 +17,9 @@ extension StateService {
         viewController: UIViewController,
         dataController: DataController
     ) {
+        (location.cards as? NSMutableSet)?.removeAllObjects()
         
+        print(location.cards?.count)
         // add to the location record
         cards.forEach { card in
             let cardEntity = Card(context: dataController.viewContext)

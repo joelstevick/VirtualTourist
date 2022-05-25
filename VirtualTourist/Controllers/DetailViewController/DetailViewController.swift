@@ -29,17 +29,25 @@ class DetailViewController: UIViewController {
         self.activityIndicator.startAnimating()
         selectableCardView.delegate = self
         
+        // listen for changes
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: Notification.Name("*"), object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // reload pics for this location
         Task {
             await StateService.shared.load(location: self.location, dataController: dataController, viewController: self, completion:  {
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
+                    
+                    self.selectableCardView.reload()
                 }
                 
             })
         }
     
-        // listen for changes
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: Notification.Name("*"), object: nil)
     }
     
     // MARK: - Navigation
