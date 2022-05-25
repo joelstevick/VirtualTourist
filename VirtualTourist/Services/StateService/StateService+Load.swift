@@ -113,19 +113,12 @@ extension StateService {
             guard cards.count > 0 else {
                 return false
             }
+            print("loadLocation", cards.count, self.photoImages.count)
             for card in cards {
                 let fileURL = getFileUrl(cardId: (card as! Card).id!, viewController: viewController)!
                 if let photoImage = UIImage(contentsOfFile: fileURL.path) {
                     self.photoImages.append(photoImage)
-                    
-                    self.cards = self.photoImages.map({ uiImage in
-                        let selectableCard =  SelectableCard(id: (card as! Card).id!, uiImage: uiImage, selected: (card as! Card).selected)
-                        
-                        if (selectableCard.selected) {
-                            print("Card selected", selectableCard.id)
-                        }
-                        return selectableCard
-                    })
+                    self.cards.append(SelectableCard(id: (card as! Card).id!, uiImage: photoImage, selected: (card as! Card).selected))
                 } else {
                     return false
                 }
