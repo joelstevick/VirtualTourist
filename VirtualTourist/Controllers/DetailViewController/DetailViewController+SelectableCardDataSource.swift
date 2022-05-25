@@ -8,7 +8,7 @@
 import Foundation
 
 extension DetailViewController: SelectableCardsDataSource {
-    func cardRemoved(card: SelectableCard) {
+    func cardRemoved(card: Card) {
         var updatedCard = card
         updatedCard.selected = false
         StateService.shared.updateCard(
@@ -24,7 +24,7 @@ extension DetailViewController: SelectableCardsDataSource {
         return StateService.shared.getSelectedCards().count
     }
     
-    func getCardAtIndex(at index: Int) -> SelectableCard {
+    func getCardAtIndex(at index: Int) -> Card {
         return StateService.shared.getSelectedCards()[index]
     }
     
@@ -36,7 +36,7 @@ extension DetailViewController: SelectableCardsDataSource {
         return false
     }
     
-    func cardSelectionChanged(card: SelectableCard, selected: Bool) {
+    func cardSelectionChanged(card: Card, selected: Bool) {
         var updatedCard = card
         updatedCard.selected = true
         StateService.shared.updateCard(

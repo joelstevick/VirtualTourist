@@ -9,15 +9,15 @@ import UIKit
 
 protocol SelectableCardsDataSource {
     func getNumberOfCards() -> Int
-    func getCardAtIndex(at index: Int) -> SelectableCard
+    func getCardAtIndex(at index: Int) -> Card
     func canRemoveCards() -> Bool
     func isSelectable() -> Bool
-    func cardRemoved(card: SelectableCard) -> Void
-    func cardSelectionChanged(card: SelectableCard, selected: Bool) -> Void
+    func cardRemoved(card: Card) -> Void
+    func cardSelectionChanged(card: Card, selected: Bool) -> Void
 }
 
 extension SelectableCardsDataSource {
-    func cardRemoved(card: SelectableCard) {}
+    func cardRemoved(card: Card) {}
     func isSelectable() -> Bool {
         return true
     }
@@ -36,7 +36,7 @@ class SelectableCardsView: UIView {
     var selectionState = [Int: Bool]()
     var imageViews = [Int: UIImageView]()
     var currentVisualCue = [Int: UIView]()
-    var cards = [Int: SelectableCard]()
+    var cards = [Int: Card]()
     
     var configured = false
     

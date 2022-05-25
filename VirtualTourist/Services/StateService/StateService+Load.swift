@@ -75,10 +75,13 @@ extension StateService {
                             if let photoImage = photoImage {
                                 self.photoImages.append(photoImage)
                                 
-                                self.cards = self.photoImages.map({ uiImage in
-                                    return SelectableCard(id: NanoID.generate(), uiImage: uiImage, selected: false)
-                                })
+                                let card = Card(context: dataController.viewContext)
+                                card.id = NanoID.generate()
+                                card.uiImage = photoImage
+                                card.selected = false
                                 
+                                self.cards.append(card)
+                              
                                 // If all images loaded, we are done
                                 if self.photoImages.count == photoUrls.count {
                                     
@@ -111,17 +114,22 @@ extension StateService {
         // for each card, load the image
         self.cards.removeAll()
         
+        print(location.cards?.count)
         if let cards = location.cards {
             
             guard cards.count > 0 else {
                 return false
             }
             print("loadLocation", cards.count, self.photoImages.count)
-            for card in cards {
-                let fileURL = getFileUrl(cardId: (card as! Card).id!, viewController: viewController)!
+            for _card in cards {
+                let card = _card as! Card
+                let fileURL = getFileUrl(cardId: card.id!, viewController: viewController)!
                 if let photoImage = UIImage(contentsOfFile: fileURL.path) {
+                    
                     self.photoImages.append(photoImage)
-                    self.cards.append(SelectableCard(id: (card as! Card).id!, uiImage: photoImage, selected: (card as! Card).selected))
+                    
+                    card.uiImage = photoImage
+                    
                 } else {
                     return false
                 }

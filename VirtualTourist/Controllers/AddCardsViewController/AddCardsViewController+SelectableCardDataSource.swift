@@ -10,13 +10,14 @@ import UIKit
 import NanoID
 
 extension AddCardsViewController: SelectableCardsDataSource {
-    func cardRemoved(card: SelectableCard) {
+    func cardRemoved(card: Card) {
         print("card selection state removed", card)
     }
     
-    func cardSelectionChanged(card: SelectableCard, selected: Bool) {
+    func cardSelectionChanged(card: Card, selected: Bool) {
         var updatedCard = card
         updatedCard.selected = selected
+        updatedCard.location = location
         StateService.shared.updateCard(
             updatedCard,
             location: location,
@@ -30,7 +31,7 @@ extension AddCardsViewController: SelectableCardsDataSource {
         StateService.shared.getAvailableCards().count
     }
     
-    func getCardAtIndex(at index: Int) -> SelectableCard {
+    func getCardAtIndex(at index: Int) -> Card {
         return StateService.shared.getAvailableCards()[index]
     }
     

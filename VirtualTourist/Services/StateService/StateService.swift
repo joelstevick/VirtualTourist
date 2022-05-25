@@ -23,23 +23,23 @@ class StateService {
     private init() {
         
     }
-    var cards = [SelectableCard]()
+    var cards = [Card]()
     var photoImages = [UIImage]()
     
     
-    func getSelectedCards() -> [SelectableCard] {
+    func getSelectedCards() -> [Card] {
         return cards.filter { card in
             return card.selected
         }
     }
     
-    func getAvailableCards() -> [SelectableCard] {
+    func getAvailableCards() -> [Card] {
         return cards.filter { card in
             return !card.selected
         }
     }
     
-    func updateCard(_ card: SelectableCard, location: Location, viewController: UIViewController, dataController: DataController) {
+    func updateCard(_ card: Card, location: Location, viewController: UIViewController, dataController: DataController) {
         
         self.cards = self.cards.map({ _card in
             if _card.id == card.id {

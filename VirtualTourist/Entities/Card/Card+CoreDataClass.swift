@@ -8,8 +8,10 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Card)
 public class Card: NSManagedObject {
 
+    var uiImage: UIImage?
 }

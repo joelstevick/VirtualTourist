@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     // MARK: - Lifecyle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.activityIndicator.startAnimating()
+        
         selectableCardView.delegate = self
         
         // listen for changes
@@ -35,6 +35,8 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.activityIndicator.startAnimating()
         
         // reload pics for this location
         Task {

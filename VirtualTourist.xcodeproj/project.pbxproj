@@ -41,7 +41,6 @@
 		93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFA2834ECBD002CD6EF /* Search.swift */; };
 		93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFC2834F237002CD6EF /* SearchResponse.swift */; };
 		93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08659283AA0DC00E3429F /* SelectableCardsView.swift */; };
-		93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F0865D283ACBA100E3429F /* SelectableCard.swift */; };
 		93F08662283B861F00E3429F /* SelectableCardsView+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */; };
 		93F08664283B898200E3429F /* SelectableCardsView+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */; };
 		93F08666283B8C8A00E3429F /* SelectableCardsView+Reload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */; };
@@ -89,7 +88,6 @@
 		93D57EFA2834ECBD002CD6EF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		93D57EFC2834F237002CD6EF /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		93F08659283AA0DC00E3429F /* SelectableCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCardsView.swift; sourceTree = "<group>"; };
-		93F0865D283ACBA100E3429F /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
 		93F08661283B861F00E3429F /* SelectableCardsView+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+ScrollView.swift"; sourceTree = "<group>"; };
 		93F08663283B898200E3429F /* SelectableCardsView+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Gestures.swift"; sourceTree = "<group>"; };
 		93F08665283B8C8A00E3429F /* SelectableCardsView+Reload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SelectableCardsView+Reload.swift"; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		933230152839093E0017AF7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				93F0865D283ACBA100E3429F /* SelectableCard.swift */,
 				938E1FB728338EF4007EAB79 /* VirtualTourist.xcdatamodeld */,
 				93323016283909520017AF7F /* DataController.swift */,
 			);
@@ -407,7 +404,6 @@
 				9332301E28390F980017AF7F /* MapViewController+Utilities.swift in Sources */,
 				93656E042836351C0003B17A /* AddCardsViewController.swift in Sources */,
 				93F08666283B8C8A00E3429F /* SelectableCardsView+Reload.swift in Sources */,
-				93F0865E283ACBA100E3429F /* SelectableCard.swift in Sources */,
 				938E1FB128338EF4007EAB79 /* SceneDelegate.swift in Sources */,
 				93D57EFD2834F237002CD6EF /* SearchResponse.swift in Sources */,
 				93F0865A283AA0DC00E3429F /* SelectableCardsView.swift in Sources */,
