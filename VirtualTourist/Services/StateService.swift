@@ -26,13 +26,16 @@ class StateService {
     var cards = [SelectableCard]()
     var photoImages = [UIImage]()
     
-    func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
-        // reset
-        photoImages.removeAll()
+    func loadLocally(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
         
         // try to load from db
         loadLocation(location: location, dataController: dataController)
         
+    }
+    func loadFromCloud(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
+        // reset
+        photoImages.removeAll()
+      
         // get the photo URLs
         let photoUrls = await search(
             coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
