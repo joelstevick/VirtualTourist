@@ -26,10 +26,19 @@ class StateService {
     var cards = [SelectableCard]()
     var photoImages = [UIImage]()
     
-    func loadLocally(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
+    // MARK: - Load
+    func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
+        
+        if !(await loadLocal(location: location, dataController: dataController, viewController: viewController,
+                           completion: completion)) {
+            await loadFromCloud(location: location, dataController: dataController, viewController: viewController, completion: completion)
+        }
+    }
+    func loadLocal(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async -> Bool {
         
         // try to load from db
         loadLocation(location: location, dataController: dataController)
+        return false
         
     }
     func loadFromCloud(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {

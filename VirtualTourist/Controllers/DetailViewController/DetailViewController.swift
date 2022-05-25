@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
         selectableCardView.delegate = self
         
         Task {
-            await StateService.shared.loadFromCloud(location: self.location, dataController: dataController, viewController: self, completion:  {
+            await StateService.shared.load(location: self.location, dataController: dataController, viewController: self, completion:  {
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                 }
