@@ -108,6 +108,8 @@ extension StateService {
     func loadLocation(location: Location, dataController: DataController, viewController: UIViewController) -> Bool {
         
         // for each card, load the image
+        self.cards.removeAll()
+        
         if let cards = location.cards {
             
             guard cards.count > 0 else {

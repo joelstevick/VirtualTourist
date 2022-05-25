@@ -29,7 +29,7 @@ extension StateService {
             cardEntity.selected = card.selected
             location.cards = location.cards!.adding(cardEntity) as NSSet
         }
-        print(location.cards?.count)
+        print("selected cards", getSelectedCards().count)
         // persist each image to the filesystem
         for card in cards {
             let manager = FileManager.default
