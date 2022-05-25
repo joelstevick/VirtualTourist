@@ -11,7 +11,12 @@ extension DetailViewController: SelectableCardsDataSource {
     func cardRemoved(card: SelectableCard) {
         var updatedCard = card
         updatedCard.selected = false
-        StateService.shared.updateCard(updatedCard)
+        StateService.shared.updateCard(
+            updatedCard,
+            location: location,
+            viewController: self,
+            dataController: dataController
+        )
     }
     
     func getNumberOfCards() -> Int {
@@ -31,6 +36,14 @@ extension DetailViewController: SelectableCardsDataSource {
     }
     
     func cardSelectionChanged(card: SelectableCard, selected: Bool) {
+        var updatedCard = card
+        updatedCard.selected = true
+        StateService.shared.updateCard(
+            updatedCard,
+            location: location,
+            viewController: self,
+            dataController: dataController
+        )
     }
     
     

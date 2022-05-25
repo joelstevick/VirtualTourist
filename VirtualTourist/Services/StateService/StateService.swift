@@ -39,7 +39,7 @@ class StateService {
         }
     }
     
-    func updateCard(_ card: SelectableCard) {
+    func updateCard(_ card: SelectableCard, location: Location, viewController: UIViewController, dataController: DataController) {
         
         self.cards = self.cards.map({ _card in
             if _card.id == card.id {
@@ -48,6 +48,8 @@ class StateService {
                 return _card
             }
         })
+        saveCards(location: location, cards: self.cards, viewController: viewController, dataController: dataController)
+        
         publishChanges()
     }
     func publishChanges() {

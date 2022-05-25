@@ -44,6 +44,9 @@ class DetailViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addCardVC = segue.destination as! AddCardsViewController
+        addCardVC.dataController = dataController
+        addCardVC.location =  location
     }
     
     // MARK: - Utility functions

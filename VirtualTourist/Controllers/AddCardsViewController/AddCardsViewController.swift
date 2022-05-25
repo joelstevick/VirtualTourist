@@ -12,6 +12,8 @@ class AddCardsViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var selectableCardView: SelectableCardsView!
+    var location: Location!
+    var dataController: DataController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
