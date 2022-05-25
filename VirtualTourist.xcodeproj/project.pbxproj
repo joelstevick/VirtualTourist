@@ -34,6 +34,7 @@
 		93BB70A4283D92FB001AF087 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB70A0283D92FB001AF087 /* Location+CoreDataClass.swift */; };
 		93BB70A5283D92FB001AF087 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB70A1283D92FB001AF087 /* Location+CoreDataProperties.swift */; };
 		93BB70AA283D9459001AF087 /* Location+CRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB70A9283D9459001AF087 /* Location+CRUD.swift */; };
+		93BB70AD283E1ADF001AF087 /* StateService+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BB70AC283E1ADF001AF087 /* StateService+Load.swift */; };
 		93D57EF52834E5D0002CD6EF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF42834E5D0002CD6EF /* DetailViewController.swift */; };
 		93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EF82834EB15002CD6EF /* FlickrConfig.swift */; };
 		93D57EFB2834ECBD002CD6EF /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D57EFA2834ECBD002CD6EF /* Search.swift */; };
@@ -80,6 +81,7 @@
 		93BB70A0283D92FB001AF087 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		93BB70A1283D92FB001AF087 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		93BB70A9283D9459001AF087 /* Location+CRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CRUD.swift"; sourceTree = "<group>"; };
+		93BB70AC283E1ADF001AF087 /* StateService+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StateService+Load.swift"; sourceTree = "<group>"; };
 		93D57EF42834E5D0002CD6EF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		93D57EF82834EB15002CD6EF /* FlickrConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrConfig.swift; sourceTree = "<group>"; };
 		93D57EFA2834ECBD002CD6EF /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -221,6 +223,15 @@
 			path = Card;
 			sourceTree = "<group>";
 		};
+		93BB70AB283E1AC1001AF087 /* StateService */ = {
+			isa = PBXGroup;
+			children = (
+				93F0866A283BAC2100E3429F /* StateService.swift */,
+				93BB70AC283E1ADF001AF087 /* StateService+Load.swift */,
+			);
+			path = StateService;
+			sourceTree = "<group>";
+		};
 		93D57EF32834E577002CD6EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,7 +276,7 @@
 		93F08669283BAC1200E3429F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				93F0866A283BAC2100E3429F /* StateService.swift */,
+				93BB70AB283E1AC1001AF087 /* StateService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -401,6 +412,7 @@
 				93323017283909520017AF7F /* DataController.swift in Sources */,
 				93F08668283B97FD00E3429F /* SelectableCardsView+VisualCues.swift in Sources */,
 				93BB70A3283D92FB001AF087 /* Card+CoreDataProperties.swift in Sources */,
+				93BB70AD283E1ADF001AF087 /* StateService+Load.swift in Sources */,
 				93BB70A4283D92FB001AF087 /* Location+CoreDataClass.swift in Sources */,
 				93656E0928365C1F0003B17A /* GetInfoRespone.swift in Sources */,
 				93D57EF92834EB15002CD6EF /* FlickrConfig.swift in Sources */,
