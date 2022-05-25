@@ -96,4 +96,18 @@ extension StateService {
         }
     }
    
+    func loadLocation(location: Location, dataController: DataController) -> Bool {
+        let fetchRequest:NSFetchRequest<Location> = Location.fetchRequest()
+        fetchRequest.predicate = NSPredicate(
+            format: "id = %@", location.id!
+        )
+        do {
+            let locationRecord = try dataController.viewContext.fetch(fetchRequest)
+            
+            print(locationRecord[0].cards?.count)
+            return true
+        } catch {
+            return false
+        }
+    }
 }
