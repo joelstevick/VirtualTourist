@@ -22,7 +22,7 @@ extension Location {
         }
     }
     
-    func create(
+    public static func create(
         latitude: Double,
         longitude: Double,
         title: String?,
@@ -49,7 +49,7 @@ extension Location {
         
     }
     
-    func update(location: Location, context: NSManagedObjectContext, viewController: UIViewController) {
+    public static func update(location: Location, context: NSManagedObjectContext, viewController: UIViewController) {
         do {
             try context.save()
         } catch {
@@ -57,7 +57,7 @@ extension Location {
             fatalError(error.localizedDescription)
         }
     }
-    func delete(location: Location, context: NSManagedObjectContext, viewController: UIViewController) {
+    public static func delete(location: Location, context: NSManagedObjectContext, viewController: UIViewController) {
         context.delete(location)
         
         do {
@@ -68,7 +68,7 @@ extension Location {
         }
     }
     
-    func get(id: String, context: NSManagedObjectContext, viewController: UIViewController) -> Location? {
+    public static func get(id: String, context: NSManagedObjectContext, viewController: UIViewController) -> Location? {
         let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
         
         fetchRequest.predicate = NSPredicate(

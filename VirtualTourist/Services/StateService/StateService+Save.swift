@@ -29,24 +29,12 @@ extension StateService {
         for card in cards {
             let manager = FileManager.default
             
-            guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            // save to the file
+            if let fileUrl = getFileUrl(card: card, viewController: viewController) {
+                manager.createFile(atPath: fileUrl.path, contents: card.uiImage.jpegData(compressionQuality: 1.0))
+            } else {
                 return
             }
-            
-            // create the card-images folder
-            let folderUrl = url.appendingPathComponent(Constants.cardImages.rawValue)
-            
-            do {
-                try manager.createDirectory(at: folderUrl, withIntermediateDirectories: true)
-            } catch {
-                showError(viewController: viewController, message: error.localizedDescription)
-            }
-            
-            // save to the file
-            let fileUrl = folderUrl.appendingPathComponent("\(Constants.cardPrefix.rawValue)-\(card.id)")
-            
-            manager.createFile(atPath: fileUrl.path, contents: card.uiImage.jpegData(compressionQuality: 1.0))
-            
         }
         // save into the db
         Task {
@@ -58,4 +46,24 @@ extension StateService {
         }
     }
     
+    func getFileUrl(card: SelectableCard, viewController: UIViewController) -> URL? {
+        let manager = FileManager.default
+        
+        guard let url = manager.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            showError(viewController: viewController, message: "Could not get File URL")
+            return nil
+        }
+        // create the card-images folder
+        let folderUrl = url.appendingPathComponent(Constants.cardImages.rawValue)
+        
+        do {
+            try manager.createDirectory(at: folderUrl, withIntermediateDirectories: true)
+        } catch {
+            showError(viewController: viewController, message: error.localizedDescription)
+        }
+        
+        // file URL
+        return folderUrl.appendingPathComponent("\(Constants.cardPrefix.rawValue)-\(card.id)")
+        
+    }
 }

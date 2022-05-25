@@ -21,9 +21,8 @@ extension StateService {
     func loadLocal(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async -> Bool {
         
         // try to load from db
-        loadLocation(location: location, dataController: dataController)
-        return false
-        
+        return loadLocation(location: location, dataController: dataController)
+    
     }
     func loadFromCloud(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
         // reset
@@ -97,15 +96,14 @@ extension StateService {
     }
    
     func loadLocation(location: Location, dataController: DataController) -> Bool {
-        let fetchRequest:NSFetchRequest<Location> = Location.fetchRequest()
-        fetchRequest.predicate = NSPredicate(
-            format: "id = %@", location.id!
-        )
+        
         do {
-            let locationRecord = try dataController.viewContext.fetch(fetchRequest)
             
-            print(locationRecord[0].cards?.count)
-            return true
+            // for each card, load the image
+            for card in location.cards! {
+            }
+
+            return false // for now
         } catch {
             return false
         }
