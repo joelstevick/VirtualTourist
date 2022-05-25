@@ -15,24 +15,23 @@ extension AddCardsViewController: SelectableCardsDataSource {
     }
     
     func cardSelectionChanged(card: Card, selected: Bool) {
-        var updatedCard = card
-        updatedCard.selected = selected
-        updatedCard.location = location
+        card.selected = selected
+        card.location = location
         StateService.shared.updateCard(
-            updatedCard,
+            card,
             location: location,
             viewController: self,
             dataController: dataController)
-        print("card selection state changed", updatedCard)
+        print("card selection state changed", card)
     }
     
     
     func getNumberOfCards() -> Int {
-        StateService.shared.getAvailableCards().count
+        StateService.shared.getAvailableCards(location: location).count
     }
     
     func getCardAtIndex(at index: Int) -> Card {
-        return StateService.shared.getAvailableCards()[index]
+        return StateService.shared.getAvailableCards(location: location)[index]
     }
     
     func canRemoveCards() -> Bool {

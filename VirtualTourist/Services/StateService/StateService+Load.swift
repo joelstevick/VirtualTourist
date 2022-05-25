@@ -13,10 +13,7 @@ import NanoID
 extension StateService {
     func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
         
-        // reset
-        photoImages.removeAll()
-        cards.removeAll()
-        
+
         // try to load locally, then from the cloud if needed
         if !(await loadLocal(location: location, dataController: dataController, viewController: viewController,
                              completion: completion)) {
@@ -37,6 +34,12 @@ extension StateService {
         
         return loaded
     }
+    actor DownloadCounter {
+        var count = 0
+        func increment() {
+            count += 1
+        }
+    }
     func loadFromCloud(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
        
         // get the photo URLs
@@ -50,46 +53,47 @@ extension StateService {
                 completion()
                 
                 showError(viewController: viewController, message: "No pictures for this location")
-                
-                cards.removeAll()
             }
             return
         }
         // download the images in parallel
         let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
+                
+        let downloadCounter = DownloadCounter()
         
         for photoUrl in photoUrls {
             // execute in parallel threads
             queue.async {
                 
                 Task {
+                    await downloadCounter.increment()
                     // download the image
                     let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!,
                                                       viewController: viewController)
                     
                     // need to serialize on the main thread
                     DispatchQueue.main.async {
+                       
+                        
                         Task {
+                            
                             
                             // add to the lists
                             if let photoImage = photoImage {
-                                self.photoImages.append(photoImage)
                                 
                                 let card = Card(context: dataController.viewContext)
                                 card.id = NanoID.generate()
                                 card.uiImage = photoImage
                                 card.selected = false
+                                card.location = location
                                 
-                                self.cards.append(card)
-                              
                                 // If all images loaded, we are done
-                                if self.photoImages.count == photoUrls.count {
+                                if await downloadCounter.count == photoUrls.count {
                                     
                                     Task {
                                         // persist the cards for the location
                                         self.saveCards(
                                             location: location,
-                                            cards: self.cards,
                                             viewController: viewController,
                                             dataController: dataController
                                         )
@@ -112,21 +116,16 @@ extension StateService {
     func loadLocation(location: Location, dataController: DataController, viewController: UIViewController) -> Bool {
         
         // for each card, load the image
-        self.cards.removeAll()
-        
         print(location.cards?.count)
         if let cards = location.cards {
             
             guard cards.count > 0 else {
                 return false
             }
-            print("loadLocation", cards.count, self.photoImages.count)
             for _card in cards {
                 let card = _card as! Card
                 let fileURL = getFileUrl(cardId: card.id!, viewController: viewController)!
                 if let photoImage = UIImage(contentsOfFile: fileURL.path) {
-                    
-                    self.photoImages.append(photoImage)
                     
                     card.uiImage = photoImage
                     
@@ -134,7 +133,7 @@ extension StateService {
                     return false
                 }
             }
-            print("selected", getSelectedCards().count)
+            print("selected", getSelectedCards(location: location).count)
             return true
         } else {
             return false

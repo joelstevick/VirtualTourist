@@ -13,16 +13,17 @@ import NanoID
 extension StateService {
     func saveCards(
         location: Location,
-        cards: [Card],
         viewController: UIViewController,
         dataController: DataController
     ) {
         (location.cards as? NSMutableSet)?.removeAllObjects()
         
-        print("selected cards", getSelectedCards().count, cards.count, location.cards?.count)
+        print("selected cards", getSelectedCards(location: location).count, location.cards!.count, location.cards?.count ?? -1)
         // persist each image to the filesystem
-        for card in cards {
+        for _card in location.cards! {
             let manager = FileManager.default
+            
+            let card = _card as! Card
             
             // save to the file
             if let fileUrl = getFileUrl(cardId: card.id!, viewController: viewController) {
