@@ -19,7 +19,7 @@ extension StateService {
     ) {
         (location.cards as? NSMutableSet)?.removeAllObjects()
         
-        print(location.cards?.count)
+        
         // add to the location record
         cards.forEach { card in
             let cardEntity = Card(context: dataController.viewContext)
@@ -29,7 +29,7 @@ extension StateService {
             cardEntity.selected = card.selected
             location.cards = location.cards!.adding(cardEntity) as NSSet
         }
-        
+        print(location.cards?.count)
         // persist each image to the filesystem
         for card in cards {
             let manager = FileManager.default

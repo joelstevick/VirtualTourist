@@ -12,6 +12,7 @@ import NanoID
 
 extension StateService {
     func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
+        
         // reset
         photoImages.removeAll()
         
@@ -118,15 +119,18 @@ extension StateService {
                     self.photoImages.append(photoImage)
                     
                     self.cards = self.photoImages.map({ uiImage in
-                        let selectableCard =  SelectableCard(id: NanoID.generate(), uiImage: uiImage, selected: (card as! Card).selected)
+                        let selectableCard =  SelectableCard(id: (card as! Card).id!, uiImage: uiImage, selected: (card as! Card).selected)
                         
+                        if (selectableCard.selected) {
+                            print("Card selected", selectableCard.id)
+                        }
                         return selectableCard
                     })
                 } else {
                     return false
                 }
             }
-            
+            print("selected", getSelectedCards().count)
             return true
         } else {
             return false
