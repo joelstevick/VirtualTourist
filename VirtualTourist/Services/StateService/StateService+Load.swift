@@ -44,8 +44,7 @@ extension StateService {
         
         // get the photo URLs
         let photoUrls = await search(
-            coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
-            , viewController: viewController)
+            coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), viewController: viewController)
         
         guard photoUrls.count > 0 else {
             // call completion handler
@@ -56,14 +55,11 @@ extension StateService {
             }
             return
         }
-        // download the images in parallel
-        let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
-        
+        // download the images
         let downloadCounter = DownloadCounter()
         
         for photoUrl in photoUrls {
-            // execute in parallel threads
-            queue.async {
+            DispatchQueue.main.async {
                 
                 Task {
                     await downloadCounter.increment()
@@ -72,9 +68,10 @@ extension StateService {
                     let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!,
                                                       viewController: viewController)
                     
-                    // add a card for each downloaded image
+                    // add a card the downloaded image
                     if let photoImage = photoImage {
                         
+                        // create a new card
                         let card = Card(context: dataController.viewContext)
                         card.id = NanoID.generate()
                         card.uiImage = photoImage
@@ -91,10 +88,6 @@ extension StateService {
                         // save to db
                         do {
                             try dataController.viewContext.save()
-                            
-                            let debug: Location = Location.get(id: location.id!, context: dataController.viewContext, viewController: viewController)!
-                            
-                            print("debug", debug.id!, location.id!, debug.cards?.count, location.cards?.count)
                         } catch {
                             showError(viewController: viewController, message: error.localizedDescription)
                         }
