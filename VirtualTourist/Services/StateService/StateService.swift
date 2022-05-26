@@ -25,9 +25,14 @@ class StateService {
     }
     
     func getSelectedCards(location: Location) -> [Card] {
-        return location.cards?.filter { card in
-            return (card as AnyObject).selected
-        } as! [Card]
+        if let cards = location.cards {
+            return cards.filter { card in
+                return (card as AnyObject).selected
+            } as! [Card]
+        } else {
+            return []
+        }
+        
     }
     
     func getAvailableCards(location: Location) -> [Card] {
