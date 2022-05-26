@@ -49,8 +49,6 @@ extension SelectableCardsView: UIGestureRecognizerDelegate {
             return
         }
         if let gestureView = gestureRecognizer.view {
-            
-           
             // apply visual cue
             UIView.animate(withDuration: 0.5) {
                 gestureView.center = CGPoint(x: gestureView.center.x, y: -1 * gestureView.frame.height)
@@ -59,11 +57,11 @@ extension SelectableCardsView: UIGestureRecognizerDelegate {
                     return
                 }
                 gestureView.superview!.removeFromSuperview()
+                
+                // notify the delegate
+                delegate.cardRemoved(card: self.cards[self.pageControl.currentPage]!)
             }
 
-            // notify the delegate
-            let isSelected = selectionState[pageControl.currentPage] == true
-            delegate.cardRemoved(card: cards[pageControl.currentPage]!)
             
         }
     }
