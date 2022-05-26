@@ -8,6 +8,7 @@
 import Foundation
 
 extension MapViewController {
+    
     // MARK: - Save Observer
     func addSaveNotificationObserver() {
         
@@ -15,7 +16,7 @@ extension MapViewController {
         
         saveObserverToken =
         NotificationCenter.default.addObserver(
-            forName: .NSManagedObjectContextObjectsDidChange,
+            forName: .NSManagedObjectContextDidSave,
             object:dataController.viewContext,
             queue:nil,
             using:handleSaveNotication(notification:))
@@ -29,6 +30,7 @@ extension MapViewController {
         }
     }
     func handleSaveNotication(notification: Notification) {
+       
         DispatchQueue.main.async { [weak self] in
             // clear the map
             if let savedAnnotations = self?.savedAnnotations {
@@ -59,6 +61,7 @@ extension MapViewController {
         }
     }
     func handleDeleteLocationsNotication(notification: Notification) {
+        
         DispatchQueue.main.async { [weak self] in
             let deletedLocations = notification.object as! [Location]
             
