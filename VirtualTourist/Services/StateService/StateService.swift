@@ -40,6 +40,12 @@ class StateService {
         
         saveCardImage(card: card, viewController: viewController, dataController: dataController)
         
+        do {
+            try dataController.viewContext.save()
+        } catch {
+            showError(viewController: viewController, message: error.localizedDescription)
+        }
+        
         publishChanges()
     }
     func publishChanges() {
