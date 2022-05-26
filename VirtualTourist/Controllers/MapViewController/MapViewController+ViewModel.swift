@@ -40,6 +40,11 @@ extension MapViewController {
             NSSortDescriptor(key: "creationDate", ascending: false)
         ]
         
+        // ignore trashed locations
+        fetchRequest.predicate = NSPredicate(
+            format: "tombstone == NO", ""
+        )
+        
         guard let locations = try? dataController.viewContext.fetch(fetchRequest) else {
             showError(viewController: self, message: "Could not read your phone data")
             return

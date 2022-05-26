@@ -66,7 +66,7 @@ extension MapViewController {
             let deletedLocations = notification.object as! [Location]
             
             for location in deletedLocations {
-                self?.dataController.viewContext.delete(location)
+                location.tombstone = true
             }
             
             do {

@@ -23,6 +23,7 @@ extension Location {
     @NSManaged public var subtitle: String?
     @NSManaged public var title: String?
     @NSManaged public var cards: NSSet?
+    @NSManaged public var tombstone: Bool
 
 }
 
