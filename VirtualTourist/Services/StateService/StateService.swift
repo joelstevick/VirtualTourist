@@ -56,4 +56,8 @@ class StateService {
     func publishChanges() {
         NotificationCenter.default.post(name: Notification.Name("*"), object: nil)
     }
+    
+    func publishDeleteLocationsRequest(locations: [Location]) {
+        NotificationCenter.default.post(name: Notification.Name("delete-locations"), object: locations)
+    }
 }

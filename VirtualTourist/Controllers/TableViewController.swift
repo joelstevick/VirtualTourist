@@ -13,10 +13,30 @@ class TableViewController: UITableViewController {
     // MARK: - Properties
     var locations: [Location]!
     
+    var locationsNotDeleted: [Location] {
+        return locations.filter { location in
+            let isDeleted = deletedLocations.filter { deletedLocation in
+                deletedLocation.id == location.id
+            }.count > 0
+            
+            return !isDeleted
+        }
+    }
+    
+    var deletedLocations = [Location]()
+    
     var dataController: DataController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if isMovingFromParent {
+            StateService.shared.publishDeleteLocationsRequest(locations: deletedLocations)
+        }
     }
     
     // MARK: - Table view data source
@@ -28,7 +48,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return locations.count
+        return locationsNotDeleted.count
     }
     
     
@@ -41,20 +61,11 @@ class TableViewController: UITableViewController {
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] action, indexPath in
             
-            // persist
-            if let location = self?.locations[indexPath.row] {
+            // defer persist
+            if let location = self?.locationsNotDeleted[indexPath.row] {
                 
-                self?.dataController.viewContext.delete(location)
-                
-                do {
-                    try self?.dataController.viewContext.save()
-                } catch {
-                    showError(viewController: self!, message: error.localizedDescription)
-                }
-                
-                // update the view
-                self?.locations.remove(at: indexPath.row)
-                
+                self?.deletedLocations.append(location as Location)
+            
                 tableView.reloadData()
             }
         }
@@ -65,7 +76,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
-        let location = locations[indexPath.row]
+        let location = locationsNotDeleted[indexPath.row]
         cell.textLabel?.text = "\(location.title!), \(location.subtitle!)"
         
         return cell
