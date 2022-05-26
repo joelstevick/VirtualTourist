@@ -13,7 +13,7 @@ import NanoID
 extension StateService {
     func load(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
         
-
+        
         // try to load locally, then from the cloud if needed
         if !(await loadLocal(location: location, dataController: dataController, viewController: viewController,
                              completion: completion)) {
@@ -41,7 +41,7 @@ extension StateService {
         }
     }
     func loadFromCloud(location: Location, dataController: DataController, viewController: UIViewController, completion: (() -> Void)?) async {
-       
+        
         // get the photo URLs
         let photoUrls = await search(
             coordinate: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
@@ -58,7 +58,7 @@ extension StateService {
         }
         // download the images in parallel
         let queue = DispatchQueue(label: "com.joelstevick.download", attributes: .concurrent)
-                
+        
         let downloadCounter = DownloadCounter()
         
         for photoUrl in photoUrls {
@@ -72,44 +72,38 @@ extension StateService {
                     let photoImage = await fetchImage(photoUrl: URL(string: photoUrl)!,
                                                       viewController: viewController)
                     
-                    // need to serialize on the main thread
-                    DispatchQueue.main.async {
-
-                        Task {
+                    // add a card for each downloaded image
+                    if let photoImage = photoImage {
+                        
+                        let card = Card(context: dataController.viewContext)
+                        card.id = NanoID.generate()
+                        card.uiImage = photoImage
+                        card.selected = false
+                        card.location = location
+                        
+                        // persist the card image for the location
+                        self.saveCardImage(
+                            card: card,
+                            viewController: viewController,
+                            dataController: dataController
+                        )
+                        
+                        // save to db
+                        do {
+                            try dataController.viewContext.save()
                             
-                            // add to the lists
-                            if let photoImage = photoImage {
-                                
-                                let card = Card(context: dataController.viewContext)
-                                card.id = NanoID.generate()
-                                card.uiImage = photoImage
-                                card.selected = false
-                                card.location = location
-                                
-                                // If all images downloaded, we are done
-                                if await downloadCounter.count == photoUrls.count {
-                                    
-                                    Task {
-                                        // persist the card images for the location
-                                        self.saveCardsImages(
-                                            location: location,
-                                            viewController: viewController,
-                                            dataController: dataController
-                                        )
-                                        
-                                        // save to db
-                                        do {
-                                            try dataController.viewContext.save()
-                                        } catch {
-                                            showError(viewController: viewController, message: error.localizedDescription)
-                                        }
-                                        // call completion handler
-                                        if let completion = completion {
-                                            completion()
-                                        }
-                                    }
-                                    
-                                }
+                            let debug: Location = Location.get(id: location.id!, context: dataController.viewContext, viewController: viewController)!
+                            
+                            print("debug", debug.id!, location.id!, debug.cards?.count, location.cards?.count)
+                        } catch {
+                            showError(viewController: viewController, message: error.localizedDescription)
+                        }
+                        // If all images downloaded, we are done
+                        if await downloadCounter.count == photoUrls.count {
+                            
+                            // call completion handler
+                            if let completion = completion {
+                                completion()
                             }
                         }
                     }
@@ -121,7 +115,6 @@ extension StateService {
     func loadLocation(location: Location, dataController: DataController, viewController: UIViewController) -> Bool {
         
         // for each card, load the image
-        print(location.cards?.count)
         if let cards = location.cards {
             
             guard cards.count > 0 else {
@@ -138,7 +131,6 @@ extension StateService {
                     return false
                 }
             }
-            print("selected", getSelectedCards(location: location).count)
             return true
         } else {
             return false

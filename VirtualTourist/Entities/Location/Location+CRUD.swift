@@ -72,7 +72,7 @@ extension Location {
         let fetchRequest: NSFetchRequest<Location> = Location.fetchRequest()
         
         fetchRequest.predicate = NSPredicate(
-            format: "id == @%", id
+            format: "id == %@", id
         )
         
         do {

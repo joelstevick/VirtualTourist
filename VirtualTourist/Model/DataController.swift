@@ -24,6 +24,9 @@ class DataController {
                 fatalError(error!.localizedDescription)
             }
             
+            // we need access across threads and between controllers
+            self.viewContext.retainsRegisteredObjects = true
+            
             completion?()
         }
     }

@@ -11,28 +11,23 @@ import CoreLocation
 import NanoID
 
 extension StateService {
-    func saveCardsImages(
-        location: Location,
+    func saveCardImage(
+        card: Card,
         viewController: UIViewController,
         dataController: DataController
     ) {
-        (location.cards as? NSMutableSet)?.removeAllObjects()
         
-        print("selected cards", getSelectedCards(location: location).count, location.cards!.count, location.cards?.count ?? -1)
-        // persist each image to the filesystem
-        for _card in location.cards! {
-            let manager = FileManager.default
-            
-            let card = _card as! Card
-            
-            // save to the file
-            if let fileUrl = getFileUrl(cardId: card.id!, viewController: viewController),
-                let uiImage = card.uiImage {
-                manager.createFile(atPath: fileUrl.path, contents: uiImage.jpegData(compressionQuality: 1.0))
-            } else {
-                return
-            }
+        // persist the image to the filesystem
+        let manager = FileManager.default
+        
+        // save to the file
+        if let fileUrl = getFileUrl(cardId: card.id!, viewController: viewController),
+           let uiImage = card.uiImage {
+            manager.createFile(atPath: fileUrl.path, contents: uiImage.jpegData(compressionQuality: 1.0))
+        } else {
+            return
         }
+        
     }
     
     func getFileUrl(cardId: String, viewController: UIViewController) -> URL? {

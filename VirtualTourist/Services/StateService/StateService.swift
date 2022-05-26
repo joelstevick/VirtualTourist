@@ -38,7 +38,7 @@ class StateService {
     
     func updateCard(_ card: Card, location: Location, viewController: UIViewController, dataController: DataController) {
         
-        saveCardsImages(location: location, viewController: viewController, dataController: dataController)
+        saveCardImage(card: card, viewController: viewController, dataController: dataController)
         
         publishChanges()
     }
