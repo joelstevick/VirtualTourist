@@ -40,22 +40,23 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] action, indexPath in
-           
+            
             // persist
-            let location = self?.locations[indexPath.row]
-            
-            self?.dataController.viewContext.delete(location!)
-          
-            do {
-                try self?.dataController.viewContext.save()
-            } catch {
-                showError(viewController: self!, message: error.localizedDescription)
+            if let location = self?.locations[indexPath.row] {
+                
+                self?.dataController.viewContext.delete(location)
+                
+                do {
+                    try self?.dataController.viewContext.save()
+                } catch {
+                    showError(viewController: self!, message: error.localizedDescription)
+                }
+                
+                // update the view
+                self?.locations.remove(at: indexPath.row)
+                
+                tableView.reloadData()
             }
-            
-            // update the view
-            self?.locations.remove(at: indexPath.row)
-            
-            tableView.reloadData()
         }
         
         return [deleteAction]
@@ -63,7 +64,7 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-      
+        
         let location = locations[indexPath.row]
         cell.textLabel?.text = "\(location.title!), \(location.subtitle!)"
         
